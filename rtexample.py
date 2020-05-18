@@ -1,10 +1,14 @@
-from raytrace import *
-from vmath import *
-from common import *
-from ctypes import *
+#from raytrace import *
+#from vmath import *
+#from test1 import *
+#from common import *
+#from ctypes import *
 from sys import argv, exit
+import array
+
+
 script, filename, shape = argv
-libc = CDLL("libc.so.6")
+
 callback_types_hit = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_application), POINTER(struct_partition), POINTER(struct_seg))
 callback_types_miss = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_application))
 
@@ -24,11 +28,10 @@ def RT_HIT_NORMAL(_normal, _hitp, _stp, _unused, _flipflag):
     if hasattr(_stp.contents.st_meth.contents, 'ft_norm'):
         _stp.contents.st_meth.contents.ft_norm(_hitp, _stp, _hitp.contents.hit_rayp)
     if _n != None:
-        _f = int(_flipflag.decode().replace("\x00","0"))
+        _f = array.array('B', _flipflag)[0]
     if _f:
         VREVERSE(fastf_t(_normal), _hitp.contents.hit_normal)
     else:
-        print(_normal)
         VMOVE(_normal, _hitp.contents.hit_normal)
 
 def VJOIN1(o, a, sb, b):
@@ -62,9 +65,9 @@ def hit_ray(ap, partheadp, segs):
         rt_pr_hit("  In", hitp)
         VPRINT(   "  Ipoint", pt)
         VPRINT(   "  Inormal", inormal)
-        #VPRINT("PDir", cur.crv_pdir)
-        #bu_log(" c1={}\n".format(cur.crv_c1))
-        #bu_log(" c2={}\n".format(cur.crv_c2))
+        VPRINT("PDir", cur.crv_pdir)
+        bu_log(" c1={}\n".format(cur.crv_c1))
+        bu_log(" c2={}\n".format(cur.crv_c2))
         RT_HIT_NORMAL(onormal, hitp, stp, (ap.contents.a_ray), pp.pt_outflip)
         rt_pr_hit("  Out", hitp)
         VPRINT(   "  Opoint", pt)

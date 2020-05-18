@@ -1,3 +1,6 @@
 __pycache__/
 main*
 rt_shootray.c
+macroparser.py
+test*
+raytrace_macros.py
