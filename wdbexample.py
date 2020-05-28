@@ -1,4 +1,10 @@
-from raytrace import *
-from wdb import *
-file = db_open("geometry.g", "r+w")
-mk_sph(wdb_fopen("geometry.g"), "sph.s", point_t(0.5, 5, 8), 0.75)
+from brlcad.database import Database
+
+# An example of the Database class
+database = Database("i dont have names to give.g", "No title as usual")
+
+# Makes a sphere with default arguments
+database.sphere("default_sph")
+
+# Makes a sphere with given arguments
+database.sphere("sph_with_args", (10, 10, 10), 2)

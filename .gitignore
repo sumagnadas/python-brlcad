@@ -4,3 +4,5 @@ rt_shootray.c
 macroparser.py
 test*
 raytrace_macros.py
+geometry.g
+usage.txt
