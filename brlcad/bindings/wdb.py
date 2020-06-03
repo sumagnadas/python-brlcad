@@ -1,7 +1,7 @@
 r"""Wrapper for wdb.h
 
 Generated with:
-/mnt/sda2/python/virtualenvs/python-brlcad/bin/ctypesgen -I/usr/brlcad/dev-7.31.0/include/brlcad/ /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h -o wdb.py -l/usr/brlcad/dev-7.31.0/lib/libwdb.so -l/usr/brlcad/dev-7.31.0/lib/libbu.so -l/usr/brlcad/dev-7.31.0/lib/librt.so -l/usr/brlcad/dev-7.31.0/lib/libbn.so
+./genwrapper.py --filename=/usr/brlcad/dev-7.31.0/include/brlcad/wdb.h -l /usr/brlcad/dev-7.31.0/lib/libwdb.so
 
 Do not modify this file.
 """
@@ -812,11 +812,8 @@ add_library_search_dirs([])
 
 # Begin libraries
 _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"] = load_library("/usr/brlcad/dev-7.31.0/lib/libwdb.so")
-_libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"] = load_library("/usr/brlcad/dev-7.31.0/lib/libbu.so")
-_libs["/usr/brlcad/dev-7.31.0/lib/librt.so"] = load_library("/usr/brlcad/dev-7.31.0/lib/librt.so")
-_libs["/usr/brlcad/dev-7.31.0/lib/libbn.so"] = load_library("/usr/brlcad/dev-7.31.0/lib/libbn.so")
 
-# 4 libraries
+# 1 libraries
 # End libraries
 
 # No modules
