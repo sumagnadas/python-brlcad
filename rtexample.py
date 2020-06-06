@@ -78,6 +78,7 @@ def hit_ray(ap, partheadp, segs):
 def miss(ap):
     bu_log("missed\n")
     return 0
+    
 def VSET(o,a,b,c):
     o[X] = a
     o[Y] = b

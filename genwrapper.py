@@ -16,11 +16,11 @@ args_parser.add_option("-l", "--library",dest="library")
 
 (options,args) = args_parser.parse_args()
 
-default_options = get_default_options()
 filename = [options.filename]
-default_options.libraries.append(options.library)
 
-def main(filename):
+def main(filename, library):
+    default_options = get_default_options()
+    default_options.libraries.extend(library)
     for i in range(0, len(filename) - 1 if not len(filename) - 1 == 0 else 1):
         with open(filename[i]) as e:
             file = e.read().splitlines()
@@ -30,7 +30,7 @@ def main(filename):
                     if not "<" in line[1].strip("\"./"):
                         path.append(include_prefix + line[1].strip("\"./"))
 
-    default_options.headers = filename# + path
+    default_options.headers = filename
 
     environ['LD_LIBRARY_PATH']="/usr/brlcad/dev-7.31.0/lib/"
     file = splitext(basename(filename[0]))[0]
@@ -43,4 +43,4 @@ def main(filename):
     printer_python.WrapperPrinter(default_options.output, default_options, desc)
 
 if  __name__ == "__main__":
-    main(filename)
+    main(filename, [options.library])
