@@ -1,7 +1,7 @@
 r"""Wrapper for raytrace.h
 
 Generated with:
-/mnt/sda2/python/virtualenvs/python-brlcad/bin/ctypesgen -I/usr/brlcad/dev-7.31.0/include/brlcad/ /usr/brlcad/dev-7.31.0/include/brlcad/raytrace.h /usr/brlcad/dev-7.31.0/include/brlcad/common.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/hist.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/mapped_file.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h /usr/brlcad/dev-7.31.0/include/brlcad/bn.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/db5.h /usr/brlcad/dev-7.31.0/include/brlcad/nmg.h /usr/brlcad/dev-7.31.0/include/brlcad/pc.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/geom.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/defines.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_fullpath.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/debug.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/tol.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_internal.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/xray.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/hit.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/seg.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/soltab.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/mater.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/region.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/ray_partition.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/space_partition.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/mem.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_instance.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/directory.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/nongeom.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/tree.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/wdb.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/anim.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/piece.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/resource.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/application.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/global.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/rt_instance.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/view.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/func.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/functab.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/private.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/nmg.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/overlap.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/pattern.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/shoot.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/timer.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/boolweave.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/calc.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/cmd.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/search.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_io.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/arb8.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/epa.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/pipe.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/metaball.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/rpc.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/pg.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/hf.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/dsp.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/ell.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/tgc.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/sketch.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/annot.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/script.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/bot.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/brep.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/tor.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/rhc.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/primitives/cline.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/comb.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/misc.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/prep.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/vlist.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/htbl.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/dspline.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_attr.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/binunif.h /usr/brlcad/dev-7.31.0/include/brlcad/rt/version.h -o raytrace.py -l/usr/brlcad/dev-7.31.0/lib/libbu.so -l/usr/brlcad/dev-7.31.0/lib/librt.so
+./genwrapper.py
 
 Do not modify this file.
 """
@@ -811,23 +811,17 @@ del loaderclass
 add_library_search_dirs([])
 
 # Begin libraries
-_libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"] = load_library("/usr/brlcad/dev-7.31.0/lib/libbu.so")
 _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"] = load_library("/usr/brlcad/dev-7.31.0/lib/librt.so")
 
-# 2 libraries
+# 1 libraries
 # End libraries
 
-# No modules
+# Begin modules
+from .bu import *
+from .bn import *
 
-u_char = c_ubyte# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 155
-
-u_int = c_uint# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 156
-
-u_long = c_ulong# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 157
-
-u_short = c_ushort# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 158
-
-__intmax_t = c_long# /usr/include/x86_64-linux-gnu/bits/types.h: 72
+# 2 modules
+# End modules
 
 __off_t = c_long# /usr/include/x86_64-linux-gnu/bits/types.h: 152
 
@@ -835,24 +829,9 @@ __off64_t = c_long# /usr/include/x86_64-linux-gnu/bits/types.h: 153
 
 __time_t = c_long# /usr/include/x86_64-linux-gnu/bits/types.h: 160
 
-intmax_t = __intmax_t# /usr/include/stdint.h: 101
-
 off_t = __off64_t# /usr/include/x86_64-linux-gnu/sys/types.h: 87
 
 time_t = __time_t# /usr/include/x86_64-linux-gnu/bits/types/time_t.h: 7
-
-# /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h: 8
-class struct_anon_3(Structure):
-    pass
-
-struct_anon_3.__slots__ = [
-    '__val',
-]
-struct_anon_3._fields_ = [
-    ('__val', c_ulong * int((1024 / (8 * sizeof(c_ulong))))),
-]
-
-__sigset_t = struct_anon_3# /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h: 8
 
 # /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h: 49
 class struct__IO_FILE(Structure):
@@ -956,280 +935,6 @@ struct_bu_vls._fields_ = [
     ('vls_max', c_size_t),
 ]
 
-bu_vls_t = struct_bu_vls# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 60
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 95
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_init", "cdecl"):
-    bu_vls_init = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_init", "cdecl")
-    bu_vls_init.argtypes = [POINTER(struct_bu_vls)]
-    bu_vls_init.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 103
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_init_if_uninit", "cdecl"):
-    bu_vls_init_if_uninit = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_init_if_uninit", "cdecl")
-    bu_vls_init_if_uninit.argtypes = [POINTER(struct_bu_vls)]
-    bu_vls_init_if_uninit.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 110
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_vlsinit", "cdecl"):
-    bu_vls_vlsinit = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_vlsinit", "cdecl")
-    bu_vls_vlsinit.argtypes = []
-    bu_vls_vlsinit.restype = POINTER(struct_bu_vls)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 116
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_addr", "cdecl"):
-    bu_vls_addr = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_addr", "cdecl")
-    bu_vls_addr.argtypes = [POINTER(struct_bu_vls)]
-    if sizeof(c_int) == sizeof(c_void_p):
-        bu_vls_addr.restype = ReturnString
-    else:
-        bu_vls_addr.restype = String
-        bu_vls_addr.errcheck = ReturnString
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 124
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_cstr", "cdecl"):
-    bu_vls_cstr = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_cstr", "cdecl")
-    bu_vls_cstr.argtypes = [POINTER(struct_bu_vls)]
-    bu_vls_cstr.restype = c_char_p
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 131
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_extend", "cdecl"):
-    bu_vls_extend = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_extend", "cdecl")
-    bu_vls_extend.argtypes = [POINTER(struct_bu_vls), c_size_t]
-    bu_vls_extend.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 144
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_setlen", "cdecl"):
-    bu_vls_setlen = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_setlen", "cdecl")
-    bu_vls_setlen.argtypes = [POINTER(struct_bu_vls), c_size_t]
-    bu_vls_setlen.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 150
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_strlen", "cdecl"):
-    bu_vls_strlen = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_strlen", "cdecl")
-    bu_vls_strlen.argtypes = [POINTER(struct_bu_vls)]
-    bu_vls_strlen.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 158
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_trunc", "cdecl"):
-    bu_vls_trunc = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_trunc", "cdecl")
-    bu_vls_trunc.argtypes = [POINTER(struct_bu_vls), c_int]
-    bu_vls_trunc.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 168
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_nibble", "cdecl"):
-    bu_vls_nibble = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_nibble", "cdecl")
-    bu_vls_nibble.argtypes = [POINTER(struct_bu_vls), off_t]
-    bu_vls_nibble.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 174
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_free", "cdecl"):
-    bu_vls_free = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_free", "cdecl")
-    bu_vls_free.argtypes = [POINTER(struct_bu_vls)]
-    bu_vls_free.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 180
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_vlsfree", "cdecl"):
-    bu_vls_vlsfree = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_vlsfree", "cdecl")
-    bu_vls_vlsfree.argtypes = [POINTER(struct_bu_vls)]
-    bu_vls_vlsfree.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 186
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_strdup", "cdecl"):
-    bu_vls_strdup = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_strdup", "cdecl")
-    bu_vls_strdup.argtypes = [POINTER(struct_bu_vls)]
-    if sizeof(c_int) == sizeof(c_void_p):
-        bu_vls_strdup.restype = ReturnString
-    else:
-        bu_vls_strdup.restype = String
-        bu_vls_strdup.errcheck = ReturnString
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 197
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_strgrab", "cdecl"):
-    bu_vls_strgrab = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_strgrab", "cdecl")
-    bu_vls_strgrab.argtypes = [POINTER(struct_bu_vls)]
-    if sizeof(c_int) == sizeof(c_void_p):
-        bu_vls_strgrab.restype = ReturnString
-    else:
-        bu_vls_strgrab.restype = String
-        bu_vls_strgrab.errcheck = ReturnString
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 202
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_strcpy", "cdecl"):
-    bu_vls_strcpy = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_strcpy", "cdecl")
-    bu_vls_strcpy.argtypes = [POINTER(struct_bu_vls), String]
-    bu_vls_strcpy.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 209
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_strncpy", "cdecl"):
-    bu_vls_strncpy = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_strncpy", "cdecl")
-    bu_vls_strncpy.argtypes = [POINTER(struct_bu_vls), String, c_size_t]
-    bu_vls_strncpy.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 216
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_strcat", "cdecl"):
-    bu_vls_strcat = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_strcat", "cdecl")
-    bu_vls_strcat.argtypes = [POINTER(struct_bu_vls), String]
-    bu_vls_strcat.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 222
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_strncat", "cdecl"):
-    bu_vls_strncat = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_strncat", "cdecl")
-    bu_vls_strncat.argtypes = [POINTER(struct_bu_vls), String, c_size_t]
-    bu_vls_strncat.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 230
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_vlscat", "cdecl"):
-    bu_vls_vlscat = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_vlscat", "cdecl")
-    bu_vls_vlscat.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_vls)]
-    bu_vls_vlscat.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 237
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_vlscatzap", "cdecl"):
-    bu_vls_vlscatzap = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_vlscatzap", "cdecl")
-    bu_vls_vlscatzap.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_vls)]
-    bu_vls_vlscatzap.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 245
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_strcmp", "cdecl"):
-    bu_vls_strcmp = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_strcmp", "cdecl")
-    bu_vls_strcmp.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_vls)]
-    bu_vls_strcmp.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 254
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_strncmp", "cdecl"):
-    bu_vls_strncmp = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_strncmp", "cdecl")
-    bu_vls_strncmp.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_vls), c_size_t]
-    bu_vls_strncmp.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 262
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_from_argv", "cdecl"):
-    bu_vls_from_argv = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_from_argv", "cdecl")
-    bu_vls_from_argv.argtypes = [POINTER(struct_bu_vls), c_int, POINTER(POINTER(c_char))]
-    bu_vls_from_argv.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 269
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_fwrite", "cdecl"):
-    bu_vls_fwrite = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_fwrite", "cdecl")
-    bu_vls_fwrite.argtypes = [POINTER(FILE), POINTER(struct_bu_vls)]
-    bu_vls_fwrite.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 275
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_write", "cdecl"):
-    bu_vls_write = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_write", "cdecl")
-    bu_vls_write.argtypes = [c_int, POINTER(struct_bu_vls)]
-    bu_vls_write.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 286
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_read", "cdecl"):
-    bu_vls_read = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_read", "cdecl")
-    bu_vls_read.argtypes = [POINTER(struct_bu_vls), c_int]
-    bu_vls_read.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 301
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_gets", "cdecl"):
-    bu_vls_gets = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_gets", "cdecl")
-    bu_vls_gets.argtypes = [POINTER(struct_bu_vls), POINTER(FILE)]
-    bu_vls_gets.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 307
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_putc", "cdecl"):
-    bu_vls_putc = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_putc", "cdecl")
-    bu_vls_putc.argtypes = [POINTER(struct_bu_vls), c_int]
-    bu_vls_putc.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 313
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_trimspace", "cdecl"):
-    bu_vls_trimspace = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_trimspace", "cdecl")
-    bu_vls_trimspace.argtypes = [POINTER(struct_bu_vls)]
-    bu_vls_trimspace.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 328
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_printf", "cdecl"):
-    _func = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_printf", "cdecl")
-    _restype = None
-    _errcheck = None
-    _argtypes = [POINTER(struct_bu_vls), String]
-    bu_vls_printf = _variadic_function(_func,_restype,_argtypes,_errcheck)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 340
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_sprintf", "cdecl"):
-    _func = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_sprintf", "cdecl")
-    _restype = None
-    _errcheck = None
-    _argtypes = [POINTER(struct_bu_vls), String]
-    bu_vls_sprintf = _variadic_function(_func,_restype,_argtypes,_errcheck)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 346
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_spaces", "cdecl"):
-    bu_vls_spaces = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_spaces", "cdecl")
-    bu_vls_spaces.argtypes = [POINTER(struct_bu_vls), c_size_t]
-    bu_vls_spaces.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 361
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_print_positions_used", "cdecl"):
-    bu_vls_print_positions_used = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_print_positions_used", "cdecl")
-    bu_vls_print_positions_used.argtypes = [POINTER(struct_bu_vls)]
-    bu_vls_print_positions_used.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 368
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_detab", "cdecl"):
-    bu_vls_detab = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_detab", "cdecl")
-    bu_vls_detab.argtypes = [POINTER(struct_bu_vls)]
-    bu_vls_detab.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 374
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_prepend", "cdecl"):
-    bu_vls_prepend = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_prepend", "cdecl")
-    bu_vls_prepend.argtypes = [POINTER(struct_bu_vls), String]
-    bu_vls_prepend.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 388
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_substr", "cdecl"):
-    bu_vls_substr = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_substr", "cdecl")
-    bu_vls_substr.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_vls), c_size_t, c_size_t]
-    bu_vls_substr.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 404
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_vprintf", "cdecl"):
-    bu_vls_vprintf = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_vprintf", "cdecl")
-    bu_vls_vprintf.argtypes = [POINTER(struct_bu_vls), String, c_void_p]
-    bu_vls_vprintf.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 449
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_encode", "cdecl"):
-    bu_vls_encode = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_encode", "cdecl")
-    bu_vls_encode.argtypes = [POINTER(struct_bu_vls), String]
-    bu_vls_encode.restype = c_char_p
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 462
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_decode", "cdecl"):
-    bu_vls_decode = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_decode", "cdecl")
-    bu_vls_decode.argtypes = [POINTER(struct_bu_vls), String]
-    bu_vls_decode.restype = c_char_p
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 501
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_simplify", "cdecl"):
-    bu_vls_simplify = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_simplify", "cdecl")
-    bu_vls_simplify.argtypes = [POINTER(struct_bu_vls), String, String, String]
-    bu_vls_simplify.restype = c_int
-
-bu_vls_uniq_t = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_bu_vls), POINTER(None))# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 507
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 679
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_incr", "cdecl"):
-    bu_vls_incr = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_incr", "cdecl")
-    bu_vls_incr.argtypes = [POINTER(struct_bu_vls), String, String, bu_vls_uniq_t, POINTER(None)]
-    bu_vls_incr.restype = c_int
-
-enum_anon_19 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 53
-
-BU_ATTR_CREATED = 0# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 53
-
-BU_ATTR_MODIFIED = (BU_ATTR_CREATED + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 53
-
-bu_attr_time_t = enum_anon_19# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 53
-
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 66
 class struct_bu_attribute_value_pair(Structure):
     pass
@@ -1264,74 +969,6 @@ struct_bu_attribute_value_set._fields_ = [
     ('avp', POINTER(struct_bu_attribute_value_pair)),
 ]
 
-bu_avs_t = struct_bu_attribute_value_set# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 97
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 165
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avs_init", "cdecl"):
-    bu_avs_init = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avs_init", "cdecl")
-    bu_avs_init.argtypes = [POINTER(struct_bu_attribute_value_set), c_size_t, String]
-    bu_avs_init.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 172
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avs_init_empty", "cdecl"):
-    bu_avs_init_empty = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avs_init_empty", "cdecl")
-    bu_avs_init_empty.argtypes = [POINTER(struct_bu_attribute_value_set)]
-    bu_avs_init_empty.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 178
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avs_new", "cdecl"):
-    bu_avs_new = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avs_new", "cdecl")
-    bu_avs_new.argtypes = [c_size_t, String]
-    bu_avs_new.restype = POINTER(struct_bu_attribute_value_set)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 191
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avs_add", "cdecl"):
-    bu_avs_add = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avs_add", "cdecl")
-    bu_avs_add.argtypes = [POINTER(struct_bu_attribute_value_set), String, String]
-    bu_avs_add.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 199
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avs_add_vls", "cdecl"):
-    bu_avs_add_vls = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avs_add_vls", "cdecl")
-    bu_avs_add_vls.argtypes = [POINTER(struct_bu_attribute_value_set), String, POINTER(struct_bu_vls)]
-    bu_avs_add_vls.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 206
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avs_add_nonunique", "cdecl"):
-    bu_avs_add_nonunique = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avs_add_nonunique", "cdecl")
-    bu_avs_add_nonunique.argtypes = [POINTER(struct_bu_attribute_value_set), String, String]
-    bu_avs_add_nonunique.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 213
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avs_merge", "cdecl"):
-    bu_avs_merge = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avs_merge", "cdecl")
-    bu_avs_merge.argtypes = [POINTER(struct_bu_attribute_value_set), POINTER(struct_bu_attribute_value_set)]
-    bu_avs_merge.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 222
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avs_get", "cdecl"):
-    bu_avs_get = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avs_get", "cdecl")
-    bu_avs_get.argtypes = [POINTER(struct_bu_attribute_value_set), String]
-    bu_avs_get.restype = c_char_p
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 234
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avs_remove", "cdecl"):
-    bu_avs_remove = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avs_remove", "cdecl")
-    bu_avs_remove.argtypes = [POINTER(struct_bu_attribute_value_set), String]
-    bu_avs_remove.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 240
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avs_free", "cdecl"):
-    bu_avs_free = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avs_free", "cdecl")
-    bu_avs_free.argtypes = [POINTER(struct_bu_attribute_value_set)]
-    bu_avs_free.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 246
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avs_print", "cdecl"):
-    bu_avs_print = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avs_print", "cdecl")
-    bu_avs_print.argtypes = [POINTER(struct_bu_attribute_value_set), String]
-    bu_avs_print.restype = None
-
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 130
 class struct_bu_list(Structure):
     pass
@@ -1346,68 +983,6 @@ struct_bu_list._fields_ = [
     ('forw', POINTER(struct_bu_list)),
     ('back', POINTER(struct_bu_list)),
 ]
-
-bu_list_t = struct_bu_list# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 135
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 489
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_list_new", "cdecl"):
-    bu_list_new = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_list_new", "cdecl")
-    bu_list_new.argtypes = []
-    bu_list_new.restype = POINTER(struct_bu_list)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 494
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_list_pop", "cdecl"):
-    bu_list_pop = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_list_pop", "cdecl")
-    bu_list_pop.argtypes = [POINTER(struct_bu_list)]
-    bu_list_pop.restype = POINTER(struct_bu_list)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 499
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_list_len", "cdecl"):
-    bu_list_len = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_list_len", "cdecl")
-    bu_list_len.argtypes = [POINTER(struct_bu_list)]
-    bu_list_len.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 504
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_list_reverse", "cdecl"):
-    bu_list_reverse = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_list_reverse", "cdecl")
-    bu_list_reverse.argtypes = [POINTER(struct_bu_list)]
-    bu_list_reverse.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 512
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_list_free", "cdecl"):
-    bu_list_free = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_list_free", "cdecl")
-    bu_list_free.argtypes = [POINTER(struct_bu_list)]
-    bu_list_free.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 522
-for _lib in _libs.values():
-    if not _lib.has("bu_list_parallel_append", "cdecl"):
-        continue
-    bu_list_parallel_append = _lib.get("bu_list_parallel_append", "cdecl")
-    bu_list_parallel_append.argtypes = [POINTER(struct_bu_list), POINTER(struct_bu_list)]
-    bu_list_parallel_append.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 535
-for _lib in _libs.values():
-    if not _lib.has("bu_list_parallel_dequeue", "cdecl"):
-        continue
-    bu_list_parallel_dequeue = _lib.get("bu_list_parallel_dequeue", "cdecl")
-    bu_list_parallel_dequeue.argtypes = [POINTER(struct_bu_list)]
-    bu_list_parallel_dequeue.restype = POINTER(struct_bu_list)
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 540
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ck_list", "cdecl"):
-    bu_ck_list = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ck_list", "cdecl")
-    bu_ck_list.argtypes = [POINTER(struct_bu_list), String]
-    bu_ck_list.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 547
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ck_list_magic", "cdecl"):
-    bu_ck_list_magic = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ck_list_magic", "cdecl")
-    bu_ck_list_magic.argtypes = [POINTER(struct_bu_list), String, c_uint32]
-    bu_ck_list_magic.restype = None
 
 bitv_t = c_ubyte# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 62
 
@@ -1426,277 +1001,9 @@ struct_bu_bitv._fields_ = [
     ('bits', bitv_t * int(2)),
 ]
 
-bu_bitv_t = struct_bu_bitv# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 113
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 149
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_shift", "cdecl"):
-    bu_bitv_shift = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_shift", "cdecl")
-    bu_bitv_shift.argtypes = []
-    bu_bitv_shift.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 275
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_new", "cdecl"):
-    bu_bitv_new = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_new", "cdecl")
-    bu_bitv_new.argtypes = [c_size_t]
-    bu_bitv_new.restype = POINTER(struct_bu_bitv)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 284
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_free", "cdecl"):
-    bu_bitv_free = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_free", "cdecl")
-    bu_bitv_free.argtypes = [POINTER(struct_bu_bitv)]
-    bu_bitv_free.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 292
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_clear", "cdecl"):
-    bu_bitv_clear = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_clear", "cdecl")
-    bu_bitv_clear.argtypes = [POINTER(struct_bu_bitv)]
-    bu_bitv_clear.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 297
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_or", "cdecl"):
-    bu_bitv_or = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_or", "cdecl")
-    bu_bitv_or.argtypes = [POINTER(struct_bu_bitv), POINTER(struct_bu_bitv)]
-    bu_bitv_or.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 302
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_and", "cdecl"):
-    bu_bitv_and = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_and", "cdecl")
-    bu_bitv_and.argtypes = [POINTER(struct_bu_bitv), POINTER(struct_bu_bitv)]
-    bu_bitv_and.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 307
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_vls", "cdecl"):
-    bu_bitv_vls = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_vls", "cdecl")
-    bu_bitv_vls.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_bitv)]
-    bu_bitv_vls.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 313
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_pr_bitv", "cdecl"):
-    bu_pr_bitv = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_pr_bitv", "cdecl")
-    bu_pr_bitv.argtypes = [String, POINTER(struct_bu_bitv)]
-    bu_pr_bitv.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 319
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_to_hex", "cdecl"):
-    bu_bitv_to_hex = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_to_hex", "cdecl")
-    bu_bitv_to_hex.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_bitv)]
-    bu_bitv_to_hex.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 325
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hex_to_bitv", "cdecl"):
-    bu_hex_to_bitv = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hex_to_bitv", "cdecl")
-    bu_hex_to_bitv.argtypes = [String]
-    bu_hex_to_bitv.restype = POINTER(struct_bu_bitv)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 331
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_to_binary", "cdecl"):
-    bu_bitv_to_binary = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_to_binary", "cdecl")
-    bu_bitv_to_binary.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_bitv)]
-    bu_bitv_to_binary.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 337
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_binary_to_bitv", "cdecl"):
-    bu_binary_to_bitv = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_binary_to_bitv", "cdecl")
-    bu_binary_to_bitv.argtypes = [String]
-    bu_binary_to_bitv.restype = POINTER(struct_bu_bitv)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 344
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_binary_to_bitv2", "cdecl"):
-    bu_binary_to_bitv2 = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_binary_to_bitv2", "cdecl")
-    bu_binary_to_bitv2.argtypes = [String, c_int]
-    bu_binary_to_bitv2.restype = POINTER(struct_bu_bitv)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 351
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_compare_equal", "cdecl"):
-    bu_bitv_compare_equal = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_compare_equal", "cdecl")
-    bu_bitv_compare_equal.argtypes = [POINTER(struct_bu_bitv), POINTER(struct_bu_bitv)]
-    bu_bitv_compare_equal.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 359
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_compare_equal2", "cdecl"):
-    bu_bitv_compare_equal2 = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_compare_equal2", "cdecl")
-    bu_bitv_compare_equal2.argtypes = [POINTER(struct_bu_bitv), POINTER(struct_bu_bitv)]
-    bu_bitv_compare_equal2.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 364
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_bitv_dup", "cdecl"):
-    bu_bitv_dup = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_bitv_dup", "cdecl")
-    bu_bitv_dup.argtypes = [POINTER(struct_bu_bitv)]
-    bu_bitv_dup.restype = POINTER(struct_bu_bitv)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 380
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hexstr_to_binstr", "cdecl"):
-    bu_hexstr_to_binstr = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hexstr_to_binstr", "cdecl")
-    bu_hexstr_to_binstr.argtypes = [String, POINTER(struct_bu_vls)]
-    bu_hexstr_to_binstr.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 397
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_binstr_to_hexstr", "cdecl"):
-    bu_binstr_to_hexstr = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_binstr_to_hexstr", "cdecl")
-    bu_binstr_to_hexstr.argtypes = [String, POINTER(struct_bu_vls)]
-    bu_binstr_to_hexstr.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 422
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_printb", "cdecl"):
-    bu_printb = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_printb", "cdecl")
-    bu_printb.argtypes = [String, c_ulong, String]
-    bu_printb.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 429
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_printb", "cdecl"):
-    bu_vls_printb = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_printb", "cdecl")
-    bu_vls_printb.argtypes = [POINTER(struct_bu_vls), String, c_ulong, String]
-    bu_vls_printb.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 59
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_file_exists", "cdecl"):
-    bu_file_exists = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_file_exists", "cdecl")
-    bu_file_exists.argtypes = [String, POINTER(c_int)]
-    bu_file_exists.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 68
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_file_size", "cdecl"):
-    bu_file_size = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_file_size", "cdecl")
-    bu_file_size.argtypes = [String]
-    bu_file_size.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 76
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_file_same", "cdecl"):
-    bu_file_same = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_file_same", "cdecl")
-    bu_file_same.argtypes = [String, String]
-    bu_file_same.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 82
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_file_readable", "cdecl"):
-    bu_file_readable = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_file_readable", "cdecl")
-    bu_file_readable.argtypes = [String]
-    bu_file_readable.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 88
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_file_writable", "cdecl"):
-    bu_file_writable = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_file_writable", "cdecl")
-    bu_file_writable.argtypes = [String]
-    bu_file_writable.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 94
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_file_executable", "cdecl"):
-    bu_file_executable = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_file_executable", "cdecl")
-    bu_file_executable.argtypes = [String]
-    bu_file_executable.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 104
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_file_directory", "cdecl"):
-    bu_file_directory = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_file_directory", "cdecl")
-    bu_file_directory.argtypes = [String]
-    bu_file_directory.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 114
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_file_symbolic", "cdecl"):
-    bu_file_symbolic = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_file_symbolic", "cdecl")
-    bu_file_symbolic.argtypes = [String]
-    bu_file_symbolic.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 123
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_file_delete", "cdecl"):
-    bu_file_delete = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_file_delete", "cdecl")
-    bu_file_delete.argtypes = [String]
-    bu_file_delete.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 154
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_file_list", "cdecl"):
-    bu_file_list = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_file_list", "cdecl")
-    bu_file_list.argtypes = [String, String, POINTER(POINTER(POINTER(c_char)))]
-    bu_file_list.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 165
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_file_realpath", "cdecl"):
-    bu_file_realpath = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_file_realpath", "cdecl")
-    bu_file_realpath.argtypes = [String, String]
-    if sizeof(c_int) == sizeof(c_void_p):
-        bu_file_realpath.restype = ReturnString
-    else:
-        bu_file_realpath.restype = String
-        bu_file_realpath.errcheck = ReturnString
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 173
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_fseek", "cdecl"):
-    bu_fseek = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_fseek", "cdecl")
-    bu_fseek.argtypes = [POINTER(FILE), off_t, c_int]
-    bu_fseek.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 174
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_lseek", "cdecl"):
-    bu_lseek = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_lseek", "cdecl")
-    bu_lseek.argtypes = [c_int, off_t, c_int]
-    bu_lseek.restype = off_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/file.h: 175
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ftell", "cdecl"):
-    bu_ftell = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ftell", "cdecl")
-    bu_ftell.argtypes = [POINTER(FILE)]
-    bu_ftell.restype = off_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 46
-class struct_bu_hash_entry(Structure):
-    pass
-
-bu_hash_entry = struct_bu_hash_entry# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 46
-
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 47
 class struct_bu_hash_tbl(Structure):
     pass
-
-bu_hash_tbl = struct_bu_hash_tbl# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 47
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 55
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hash_create", "cdecl"):
-    bu_hash_create = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hash_create", "cdecl")
-    bu_hash_create.argtypes = [c_ulong]
-    bu_hash_create.restype = POINTER(bu_hash_tbl)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 64
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hash_destroy", "cdecl"):
-    bu_hash_destroy = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hash_destroy", "cdecl")
-    bu_hash_destroy.argtypes = [POINTER(bu_hash_tbl)]
-    bu_hash_destroy.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 78
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hash_get", "cdecl"):
-    bu_hash_get = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hash_get", "cdecl")
-    bu_hash_get.argtypes = [POINTER(bu_hash_tbl), POINTER(c_uint8), c_size_t]
-    bu_hash_get.restype = POINTER(c_ubyte)
-    bu_hash_get.errcheck = lambda v,*a : cast(v, c_void_p)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 104
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hash_set", "cdecl"):
-    bu_hash_set = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hash_set", "cdecl")
-    bu_hash_set.argtypes = [POINTER(bu_hash_tbl), POINTER(c_uint8), c_size_t, POINTER(None)]
-    bu_hash_set.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 114
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hash_rm", "cdecl"):
-    bu_hash_rm = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hash_rm", "cdecl")
-    bu_hash_rm.argtypes = [POINTER(bu_hash_tbl), POINTER(c_uint8), c_size_t]
-    bu_hash_rm.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 138
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hash_next", "cdecl"):
-    bu_hash_next = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hash_next", "cdecl")
-    bu_hash_next.argtypes = [POINTER(bu_hash_tbl), POINTER(bu_hash_entry)]
-    bu_hash_next.restype = POINTER(bu_hash_entry)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 152
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hash_key", "cdecl"):
-    bu_hash_key = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hash_key", "cdecl")
-    bu_hash_key.argtypes = [POINTER(bu_hash_entry), POINTER(POINTER(c_uint8)), POINTER(c_size_t)]
-    bu_hash_key.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 168
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hash_value", "cdecl"):
-    bu_hash_value = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hash_value", "cdecl")
-    bu_hash_value.argtypes = [POINTER(bu_hash_entry), POINTER(None)]
-    bu_hash_value.restype = POINTER(c_ubyte)
-    bu_hash_value.errcheck = lambda v,*a : cast(v, c_void_p)
 
 fastf_t = c_double# /usr/brlcad/dev-7.31.0/include/brlcad/vmath.h: 330
 
@@ -1749,104 +1056,6 @@ struct_bu_hist._fields_ = [
     ('hg_bins', POINTER(c_long)),
 ]
 
-bu_hist_t = struct_bu_hist# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hist.h: 58
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hist.h: 112
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hist_free", "cdecl"):
-    bu_hist_free = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hist_free", "cdecl")
-    bu_hist_free.argtypes = [POINTER(struct_bu_hist)]
-    bu_hist_free.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hist.h: 119
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hist_init", "cdecl"):
-    bu_hist_init = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hist_init", "cdecl")
-    bu_hist_init.argtypes = [POINTER(struct_bu_hist), fastf_t, fastf_t, c_size_t]
-    bu_hist_init.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hist.h: 121
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hist_range", "cdecl"):
-    bu_hist_range = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hist_range", "cdecl")
-    bu_hist_range.argtypes = [POINTER(struct_bu_hist), fastf_t, fastf_t]
-    bu_hist_range.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hist.h: 126
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hist_pr", "cdecl"):
-    bu_hist_pr = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hist_pr", "cdecl")
-    bu_hist_pr.argtypes = [POINTER(struct_bu_hist), String]
-    bu_hist_pr.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 48
-try:
-    bu_n_malloc = (c_size_t).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"], "bu_n_malloc")
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 49
-try:
-    bu_n_realloc = (c_size_t).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"], "bu_n_realloc")
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 50
-try:
-    bu_n_free = (c_size_t).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"], "bu_n_free")
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 80
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_malloc", "cdecl"):
-    bu_malloc = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_malloc", "cdecl")
-    bu_malloc.argtypes = [c_size_t, String]
-    bu_malloc.restype = POINTER(c_ubyte)
-    bu_malloc.errcheck = lambda v,*a : cast(v, c_void_p)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 88
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_calloc", "cdecl"):
-    bu_calloc = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_calloc", "cdecl")
-    bu_calloc.argtypes = [c_size_t, c_size_t, String]
-    bu_calloc.restype = POINTER(c_ubyte)
-    bu_calloc.errcheck = lambda v,*a : cast(v, c_void_p)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 92
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_free", "cdecl"):
-    bu_free = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_free", "cdecl")
-    bu_free.argtypes = [POINTER(None), String]
-    bu_free.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 107
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_realloc", "cdecl"):
-    bu_realloc = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_realloc", "cdecl")
-    bu_realloc.argtypes = [POINTER(None), c_size_t, String]
-    bu_realloc.restype = POINTER(c_ubyte)
-    bu_realloc.errcheck = lambda v,*a : cast(v, c_void_p)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 126
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_malloc_len_roundup", "cdecl"):
-    bu_malloc_len_roundup = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_malloc_len_roundup", "cdecl")
-    bu_malloc_len_roundup.argtypes = [c_int]
-    bu_malloc_len_roundup.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 139
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_heap_get", "cdecl"):
-    bu_heap_get = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_heap_get", "cdecl")
-    bu_heap_get.argtypes = [c_size_t]
-    bu_heap_get.restype = POINTER(c_ubyte)
-    bu_heap_get.errcheck = lambda v,*a : cast(v, c_void_p)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 149
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_heap_put", "cdecl"):
-    bu_heap_put = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_heap_put", "cdecl")
-    bu_heap_put.argtypes = [POINTER(None), c_size_t]
-    bu_heap_put.restype = None
-
-bu_heap_func_t = CFUNCTYPE(UNCHECKED(c_int), String)# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 155
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 165
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_heap_log", "cdecl"):
-    bu_heap_log = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_heap_log", "cdecl")
-    bu_heap_log.argtypes = [bu_heap_func_t]
-    bu_heap_log.restype = bu_heap_func_t
-
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 172
 class struct_bu_pool(Structure):
     pass
@@ -1863,49 +1072,6 @@ struct_bu_pool._fields_ = [
     ('alloc_size', c_size_t),
     ('block', POINTER(c_uint8)),
 ]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 179
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_pool_create", "cdecl"):
-    bu_pool_create = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_pool_create", "cdecl")
-    bu_pool_create.argtypes = [c_size_t]
-    bu_pool_create.restype = POINTER(struct_bu_pool)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 181
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_pool_alloc", "cdecl"):
-    bu_pool_alloc = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_pool_alloc", "cdecl")
-    bu_pool_alloc.argtypes = [POINTER(struct_bu_pool), c_size_t, c_size_t]
-    bu_pool_alloc.restype = POINTER(c_ubyte)
-    bu_pool_alloc.errcheck = lambda v,*a : cast(v, c_void_p)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 183
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_pool_delete", "cdecl"):
-    bu_pool_delete = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_pool_delete", "cdecl")
-    bu_pool_delete.argtypes = [POINTER(struct_bu_pool)]
-    bu_pool_delete.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 191
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_shmget", "cdecl"):
-    bu_shmget = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_shmget", "cdecl")
-    bu_shmget.argtypes = [POINTER(c_int), POINTER(POINTER(c_char)), c_int, c_size_t]
-    bu_shmget.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 242
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_prmem", "cdecl"):
-    bu_prmem = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_prmem", "cdecl")
-    bu_prmem.argtypes = [String]
-    bu_prmem.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 245
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ck_malloc_ptr", "cdecl"):
-    bu_ck_malloc_ptr = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ck_malloc_ptr", "cdecl")
-    bu_ck_malloc_ptr.argtypes = [POINTER(None), String]
-    bu_ck_malloc_ptr.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 248
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_mem_barriercheck", "cdecl"):
-    bu_mem_barriercheck = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_mem_barriercheck", "cdecl")
-    bu_mem_barriercheck.argtypes = []
-    bu_mem_barriercheck.restype = c_int
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/mapped_file.h: 81
 class struct_bu_mapped_file(Structure):
@@ -1936,38 +1102,6 @@ struct_bu_mapped_file._fields_ = [
     ('handle', POINTER(None)),
 ]
 
-bu_mapped_file_t = struct_bu_mapped_file# /usr/brlcad/dev-7.31.0/include/brlcad/bu/mapped_file.h: 93
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/mapped_file.h: 117
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_open_mapped_file", "cdecl"):
-    bu_open_mapped_file = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_open_mapped_file", "cdecl")
-    bu_open_mapped_file.argtypes = [String, String]
-    bu_open_mapped_file.restype = POINTER(struct_bu_mapped_file)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/mapped_file.h: 130
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_close_mapped_file", "cdecl"):
-    bu_close_mapped_file = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_close_mapped_file", "cdecl")
-    bu_close_mapped_file.argtypes = [POINTER(struct_bu_mapped_file)]
-    bu_close_mapped_file.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/mapped_file.h: 132
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_pr_mapped_file", "cdecl"):
-    bu_pr_mapped_file = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_pr_mapped_file", "cdecl")
-    bu_pr_mapped_file.argtypes = [String, POINTER(struct_bu_mapped_file)]
-    bu_pr_mapped_file.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/mapped_file.h: 145
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_free_mapped_files", "cdecl"):
-    bu_free_mapped_files = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_free_mapped_files", "cdecl")
-    bu_free_mapped_files.argtypes = [c_int]
-    bu_free_mapped_files.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/mapped_file.h: 155
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_open_mapped_file_with_path", "cdecl"):
-    bu_open_mapped_file_with_path = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_open_mapped_file_with_path", "cdecl")
-    bu_open_mapped_file_with_path.argtypes = [POINTER(POINTER(c_char)), String, String]
-    bu_open_mapped_file_with_path.restype = POINTER(struct_bu_mapped_file)
-
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 139
 class struct_bu_structparse(Structure):
     pass
@@ -1991,21 +1125,6 @@ struct_bu_structparse._fields_ = [
     ('sp_default', POINTER(None)),
 ]
 
-bu_structparse_t = struct_bu_structparse# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 152
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 161
-class struct_bu_structparse_map(Structure):
-    pass
-
-struct_bu_structparse_map.__slots__ = [
-    'sp_name',
-    'sp_hook',
-]
-struct_bu_structparse_map._fields_ = [
-    ('sp_name', String),
-    ('sp_hook', CFUNCTYPE(UNCHECKED(None), POINTER(struct_bu_structparse), String, POINTER(None), String, POINTER(None))),
-]
-
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 210
 class struct_bu_external(Structure):
     pass
@@ -2021,480 +1140,13 @@ struct_bu_external._fields_ = [
     ('ext_buf', POINTER(c_uint8)),
 ]
 
-bu_external_t = struct_bu_external# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 220
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 273
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_struct_parse", "cdecl"):
-    bu_struct_parse = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_struct_parse", "cdecl")
-    bu_struct_parse.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_structparse), String, POINTER(None)]
-    bu_struct_parse.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 281
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_struct_print", "cdecl"):
-    bu_struct_print = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_struct_print", "cdecl")
-    bu_struct_print.argtypes = [String, POINTER(struct_bu_structparse), String]
-    bu_struct_print.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 290
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_struct_export", "cdecl"):
-    bu_struct_export = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_struct_export", "cdecl")
-    bu_struct_export.argtypes = [POINTER(struct_bu_external), POINTER(None), POINTER(struct_bu_structparse)]
-    bu_struct_export.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 299
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_struct_import", "cdecl"):
-    bu_struct_import = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_struct_import", "cdecl")
-    bu_struct_import.argtypes = [POINTER(None), POINTER(struct_bu_structparse), POINTER(struct_bu_external), POINTER(None)]
-    bu_struct_import.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 312
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_struct_put", "cdecl"):
-    bu_struct_put = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_struct_put", "cdecl")
-    bu_struct_put.argtypes = [POINTER(FILE), POINTER(struct_bu_external)]
-    bu_struct_put.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 321
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_struct_get", "cdecl"):
-    bu_struct_get = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_struct_get", "cdecl")
-    bu_struct_get.argtypes = [POINTER(struct_bu_external), POINTER(FILE)]
-    bu_struct_get.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 330
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_struct_wrap_buf", "cdecl"):
-    bu_struct_wrap_buf = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_struct_wrap_buf", "cdecl")
-    bu_struct_wrap_buf.argtypes = [POINTER(struct_bu_external), POINTER(None)]
-    bu_struct_wrap_buf.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 337
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_struct_print", "cdecl"):
-    bu_vls_struct_print = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_struct_print", "cdecl")
-    bu_vls_struct_print.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_structparse), String]
-    bu_vls_struct_print.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 344
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_struct_print2", "cdecl"):
-    bu_vls_struct_print2 = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_struct_print2", "cdecl")
-    bu_vls_struct_print2.argtypes = [POINTER(struct_bu_vls), String, POINTER(struct_bu_structparse), String]
-    bu_vls_struct_print2.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 353
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_struct_item", "cdecl"):
-    bu_vls_struct_item = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_struct_item", "cdecl")
-    bu_vls_struct_item.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_structparse), String, c_int]
-    bu_vls_struct_item.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 362
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vls_struct_item_named", "cdecl"):
-    bu_vls_struct_item_named = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vls_struct_item_named", "cdecl")
-    bu_vls_struct_item_named.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_structparse), String, String, c_int]
-    bu_vls_struct_item_named.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 368
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_key_eq_to_key_val", "cdecl"):
-    bu_key_eq_to_key_val = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_key_eq_to_key_val", "cdecl")
-    bu_key_eq_to_key_val.argtypes = [String, POINTER(POINTER(c_char)), POINTER(struct_bu_vls)]
-    bu_key_eq_to_key_val.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 389
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_shader_to_list", "cdecl"):
-    bu_shader_to_list = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_shader_to_list", "cdecl")
-    bu_shader_to_list.argtypes = [String, POINTER(struct_bu_vls)]
-    bu_shader_to_list.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 391
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_shader_to_key_eq", "cdecl"):
-    bu_shader_to_key_eq = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_shader_to_key_eq", "cdecl")
-    bu_shader_to_key_eq.argtypes = [String, POINTER(struct_bu_vls)]
-    bu_shader_to_key_eq.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 402
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_fwrite_external", "cdecl"):
-    bu_fwrite_external = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_fwrite_external", "cdecl")
-    bu_fwrite_external.argtypes = [POINTER(FILE), POINTER(struct_bu_external)]
-    bu_fwrite_external.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 405
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_hexdump_external", "cdecl"):
-    bu_hexdump_external = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_hexdump_external", "cdecl")
-    bu_hexdump_external.argtypes = [POINTER(FILE), POINTER(struct_bu_external), String]
-    bu_hexdump_external.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 408
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_free_external", "cdecl"):
-    bu_free_external = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_free_external", "cdecl")
-    bu_free_external.argtypes = [POINTER(struct_bu_external)]
-    bu_free_external.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 410
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_copy_external", "cdecl"):
-    bu_copy_external = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_copy_external", "cdecl")
-    bu_copy_external.argtypes = [POINTER(struct_bu_external), POINTER(struct_bu_external)]
-    bu_copy_external.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 417
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_next_token", "cdecl"):
-    bu_next_token = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_next_token", "cdecl")
-    bu_next_token.argtypes = [String]
-    if sizeof(c_int) == sizeof(c_void_p):
-        bu_next_token.restype = ReturnString
-    else:
-        bu_next_token.restype = String
-        bu_next_token.errcheck = ReturnString
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 419
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_structparse_get_terse_form", "cdecl"):
-    bu_structparse_get_terse_form = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_structparse_get_terse_form", "cdecl")
-    bu_structparse_get_terse_form.argtypes = [POINTER(struct_bu_vls), POINTER(struct_bu_structparse)]
-    bu_structparse_get_terse_form.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 440
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_structparse_argv", "cdecl"):
-    bu_structparse_argv = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_structparse_argv", "cdecl")
-    bu_structparse_argv.argtypes = [POINTER(struct_bu_vls), c_int, POINTER(POINTER(c_char)), POINTER(struct_bu_structparse), String, POINTER(None)]
-    bu_structparse_argv.restype = c_int
-
-bu_hook_t = CFUNCTYPE(UNCHECKED(c_int), POINTER(None), POINTER(None))# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hook.h: 41
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hook.h: 43
-class struct_bu_hook(Structure):
-    pass
-
-struct_bu_hook.__slots__ = [
-    'hookfunc',
-    'clientdata',
-]
-struct_bu_hook._fields_ = [
-    ('hookfunc', bu_hook_t),
-    ('clientdata', POINTER(None)),
-]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hook.h: 49
-class struct_bu_hook_list(Structure):
-    pass
-
-struct_bu_hook_list.__slots__ = [
-    'size',
-    'capacity',
-    'hooks',
-]
-struct_bu_hook_list._fields_ = [
-    ('size', c_size_t),
-    ('capacity', c_size_t),
-    ('hooks', POINTER(struct_bu_hook)),
-]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 94
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_fgets", "cdecl"):
-    bu_fgets = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_fgets", "cdecl")
-    bu_fgets.argtypes = [String, c_int, POINTER(FILE)]
-    if sizeof(c_int) == sizeof(c_void_p):
-        bu_fgets.restype = ReturnString
-    else:
-        bu_fgets.restype = String
-        bu_fgets.errcheck = ReturnString
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 98
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_setlinebuf", "cdecl"):
-    bu_setlinebuf = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_setlinebuf", "cdecl")
-    bu_setlinebuf.argtypes = [POINTER(FILE)]
-    bu_setlinebuf.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 106
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_log_indent_delta", "cdecl"):
-    bu_log_indent_delta = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_log_indent_delta", "cdecl")
-    bu_log_indent_delta.argtypes = [c_int]
-    bu_log_indent_delta.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 113
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_log_indent_vls", "cdecl"):
-    bu_log_indent_vls = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_log_indent_vls", "cdecl")
-    bu_log_indent_vls.argtypes = [POINTER(struct_bu_vls)]
-    bu_log_indent_vls.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 123
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_log_add_hook", "cdecl"):
-    bu_log_add_hook = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_log_add_hook", "cdecl")
-    bu_log_add_hook.argtypes = [bu_hook_t, POINTER(None)]
-    bu_log_add_hook.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 129
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_log_delete_hook", "cdecl"):
-    bu_log_delete_hook = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_log_delete_hook", "cdecl")
-    bu_log_delete_hook.argtypes = [bu_hook_t, POINTER(None)]
-    bu_log_delete_hook.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 131
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_log_hook_save_all", "cdecl"):
-    bu_log_hook_save_all = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_log_hook_save_all", "cdecl")
-    bu_log_hook_save_all.argtypes = [POINTER(struct_bu_hook_list)]
-    bu_log_hook_save_all.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 132
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_log_hook_delete_all", "cdecl"):
-    bu_log_hook_delete_all = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_log_hook_delete_all", "cdecl")
-    bu_log_hook_delete_all.argtypes = []
-    bu_log_hook_delete_all.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 133
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_log_hook_restore_all", "cdecl"):
-    bu_log_hook_restore_all = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_log_hook_restore_all", "cdecl")
-    bu_log_hook_restore_all.argtypes = [POINTER(struct_bu_hook_list)]
-    bu_log_hook_restore_all.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 138
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_putchar", "cdecl"):
-    bu_putchar = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_putchar", "cdecl")
-    bu_putchar.argtypes = [c_int]
-    bu_putchar.restype = None
-
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 147
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_log", "cdecl"):
-    _func = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_log", "cdecl")
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("bu_log", "cdecl"):
+    _func = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("bu_log", "cdecl")
     _restype = c_int
     _errcheck = None
     _argtypes = [String]
     bu_log = _variadic_function(_func,_restype,_argtypes,_errcheck)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 153
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_flog", "cdecl"):
-    _func = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_flog", "cdecl")
-    _restype = c_int
-    _errcheck = None
-    _argtypes = [POINTER(FILE), String]
-    bu_flog = _variadic_function(_func,_restype,_argtypes,_errcheck)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 195
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_vsscanf", "cdecl"):
-    bu_vsscanf = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_vsscanf", "cdecl")
-    bu_vsscanf.argtypes = [String, String, c_void_p]
-    bu_vsscanf.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 203
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_sscanf", "cdecl"):
-    _func = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_sscanf", "cdecl")
-    _restype = c_int
-    _errcheck = None
-    _argtypes = [String, String]
-    bu_sscanf = _variadic_function(_func,_restype,_argtypes,_errcheck)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 227
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_scan_fastf_t", "cdecl"):
-    _func = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_scan_fastf_t", "cdecl")
-    _restype = c_int
-    _errcheck = None
-    _argtypes = [POINTER(c_int), String, String, c_size_t]
-    bu_scan_fastf_t = _variadic_function(_func,_restype,_argtypes,_errcheck)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 232
-class struct_bu_lex_t_int(Structure):
-    pass
-
-struct_bu_lex_t_int.__slots__ = [
-    'type',
-    'value',
-]
-struct_bu_lex_t_int._fields_ = [
-    ('type', c_int),
-    ('value', c_int),
-]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 237
-class struct_bu_lex_t_dbl(Structure):
-    pass
-
-struct_bu_lex_t_dbl.__slots__ = [
-    'type',
-    'value',
-]
-struct_bu_lex_t_dbl._fields_ = [
-    ('type', c_int),
-    ('value', c_double),
-]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 242
-class struct_bu_lex_t_key(Structure):
-    pass
-
-struct_bu_lex_t_key.__slots__ = [
-    'type',
-    'value',
-]
-struct_bu_lex_t_key._fields_ = [
-    ('type', c_int),
-    ('value', c_int),
-]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 248
-class struct_bu_lex_t_id(Structure):
-    pass
-
-struct_bu_lex_t_id.__slots__ = [
-    'type',
-    'value',
-]
-struct_bu_lex_t_id._fields_ = [
-    ('type', c_int),
-    ('value', String),
-]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 254
-class union_bu_lex_token(Union):
-    pass
-
-union_bu_lex_token.__slots__ = [
-    'type',
-    't_int',
-    't_dbl',
-    't_key',
-    't_id',
-]
-union_bu_lex_token._fields_ = [
-    ('type', c_int),
-    ('t_int', struct_bu_lex_t_int),
-    ('t_dbl', struct_bu_lex_t_dbl),
-    ('t_key', struct_bu_lex_t_key),
-    ('t_id', struct_bu_lex_t_id),
-]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 261
-class struct_bu_lex_key(Structure):
-    pass
-
-struct_bu_lex_key.__slots__ = [
-    'tok_val',
-    'string',
-]
-struct_bu_lex_key._fields_ = [
-    ('tok_val', c_int),
-    ('string', String),
-]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 268
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_lex", "cdecl"):
-    bu_lex = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_lex", "cdecl")
-    bu_lex.argtypes = [POINTER(union_bu_lex_token), POINTER(struct_bu_vls), POINTER(struct_bu_lex_key), POINTER(struct_bu_lex_key)]
-    bu_lex.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 288
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_mread", "cdecl"):
-    bu_mread = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_mread", "cdecl")
-    bu_mread.argtypes = [c_int, POINTER(None), c_long]
-    bu_mread.restype = c_long
-
-__jmp_buf = c_long * int(8)# /usr/include/x86_64-linux-gnu/bits/setjmp.h: 31
-
-# /usr/include/setjmp.h: 33
-class struct___jmp_buf_tag(Structure):
-    pass
-
-struct___jmp_buf_tag.__slots__ = [
-    '__jmpbuf',
-    '__mask_was_saved',
-    '__saved_mask',
-]
-struct___jmp_buf_tag._fields_ = [
-    ('__jmpbuf', __jmp_buf),
-    ('__mask_was_saved', c_int),
-    ('__saved_mask', __sigset_t),
-]
-
-jmp_buf = struct___jmp_buf_tag * int(1)# /usr/include/setjmp.h: 45
-
-# /usr/include/setjmp.h: 49
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("setjmp", "cdecl"):
-    setjmp = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("setjmp", "cdecl")
-    setjmp.argtypes = [jmp_buf]
-    setjmp.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 72
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_is_parallel", "cdecl"):
-    bu_is_parallel = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_is_parallel", "cdecl")
-    bu_is_parallel.argtypes = []
-    bu_is_parallel.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 77
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_parallel_id", "cdecl"):
-    bu_parallel_id = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_parallel_id", "cdecl")
-    bu_parallel_id.argtypes = []
-    bu_parallel_id.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 97
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_nice_set", "cdecl"):
-    bu_nice_set = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_nice_set", "cdecl")
-    bu_nice_set.argtypes = [c_int]
-    bu_nice_set.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 103
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_avail_cpus", "cdecl"):
-    bu_avail_cpus = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_avail_cpus", "cdecl")
-    bu_avail_cpus.argtypes = []
-    bu_avail_cpus.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 175
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_parallel", "cdecl"):
-    bu_parallel = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_parallel", "cdecl")
-    bu_parallel.argtypes = [CFUNCTYPE(UNCHECKED(None), c_int, POINTER(None)), c_size_t, POINTER(None)]
-    bu_parallel.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 196
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_semaphore_register", "cdecl"):
-    bu_semaphore_register = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_semaphore_register", "cdecl")
-    bu_semaphore_register.argtypes = [String]
-    bu_semaphore_register.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 212
-try:
-    BU_SEM_GENERAL = (c_int).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"], "BU_SEM_GENERAL")
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 220
-try:
-    BU_SEM_SYSCALL = (c_int).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"], "BU_SEM_SYSCALL")
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 225
-try:
-    BU_SEM_MAPPEDFILE = (c_int).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"], "BU_SEM_MAPPEDFILE")
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 238
-try:
-    bu_setjmp_valid = (c_int * int(1024)).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"], "bu_setjmp_valid")
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 239
-try:
-    bu_jmpbuf = (jmp_buf * int(1024)).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"], "bu_jmpbuf")
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 251
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_semaphore_init", "cdecl"):
-    bu_semaphore_init = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_semaphore_init", "cdecl")
-    bu_semaphore_init.argtypes = [c_uint]
-    bu_semaphore_init.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 258
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_semaphore_free", "cdecl"):
-    bu_semaphore_free = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_semaphore_free", "cdecl")
-    bu_semaphore_free.argtypes = []
-    bu_semaphore_free.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 260
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_semaphore_acquire", "cdecl"):
-    bu_semaphore_acquire = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_semaphore_acquire", "cdecl")
-    bu_semaphore_acquire.argtypes = [c_uint]
-    bu_semaphore_acquire.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 262
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_semaphore_release", "cdecl"):
-    bu_semaphore_release = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_semaphore_release", "cdecl")
-    bu_semaphore_release.argtypes = [c_uint]
-    bu_semaphore_release.restype = None
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 53
 class struct_bu_ptbl(Structure):
@@ -2512,200 +1164,6 @@ struct_bu_ptbl._fields_ = [
     ('blen', c_size_t),
     ('buffer', POINTER(POINTER(c_long))),
 ]
-
-bu_ptbl_t = struct_bu_ptbl# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 59
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 139
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ptbl_init", "cdecl"):
-    bu_ptbl_init = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ptbl_init", "cdecl")
-    bu_ptbl_init.argtypes = [POINTER(struct_bu_ptbl), c_size_t, String]
-    bu_ptbl_init.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 147
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ptbl_reset", "cdecl"):
-    bu_ptbl_reset = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ptbl_reset", "cdecl")
-    bu_ptbl_reset.argtypes = [POINTER(struct_bu_ptbl)]
-    bu_ptbl_reset.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 152
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ptbl_ins", "cdecl"):
-    bu_ptbl_ins = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ptbl_ins", "cdecl")
-    bu_ptbl_ins.argtypes = [POINTER(struct_bu_ptbl), POINTER(c_long)]
-    bu_ptbl_ins.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 165
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ptbl_locate", "cdecl"):
-    bu_ptbl_locate = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ptbl_locate", "cdecl")
-    bu_ptbl_locate.argtypes = [POINTER(struct_bu_ptbl), POINTER(c_long)]
-    bu_ptbl_locate.restype = intmax_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 171
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ptbl_zero", "cdecl"):
-    bu_ptbl_zero = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ptbl_zero", "cdecl")
-    bu_ptbl_zero.argtypes = [POINTER(struct_bu_ptbl), POINTER(c_long)]
-    bu_ptbl_zero.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 184
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ptbl_ins_unique", "cdecl"):
-    bu_ptbl_ins_unique = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ptbl_ins_unique", "cdecl")
-    bu_ptbl_ins_unique.argtypes = [POINTER(struct_bu_ptbl), POINTER(c_long)]
-    bu_ptbl_ins_unique.restype = intmax_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 197
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ptbl_rm", "cdecl"):
-    bu_ptbl_rm = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ptbl_rm", "cdecl")
-    bu_ptbl_rm.argtypes = [POINTER(struct_bu_ptbl), POINTER(c_long)]
-    bu_ptbl_rm.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 203
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ptbl_cat", "cdecl"):
-    bu_ptbl_cat = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ptbl_cat", "cdecl")
-    bu_ptbl_cat.argtypes = [POINTER(struct_bu_ptbl), POINTER(struct_bu_ptbl)]
-    bu_ptbl_cat.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 212
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ptbl_cat_uniq", "cdecl"):
-    bu_ptbl_cat_uniq = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ptbl_cat_uniq", "cdecl")
-    bu_ptbl_cat_uniq.argtypes = [POINTER(struct_bu_ptbl), POINTER(struct_bu_ptbl)]
-    bu_ptbl_cat_uniq.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 219
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ptbl_free", "cdecl"):
-    bu_ptbl_free = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ptbl_free", "cdecl")
-    bu_ptbl_free.argtypes = [POINTER(struct_bu_ptbl)]
-    bu_ptbl_free.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 224
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_pr_ptbl", "cdecl"):
-    bu_pr_ptbl = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_pr_ptbl", "cdecl")
-    bu_pr_ptbl.argtypes = [String, POINTER(struct_bu_ptbl), c_int]
-    bu_pr_ptbl.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 231
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_ptbl_trunc", "cdecl"):
-    bu_ptbl_trunc = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_ptbl_trunc", "cdecl")
-    bu_ptbl_trunc.argtypes = [POINTER(struct_bu_ptbl), c_size_t]
-    bu_ptbl_trunc.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 46
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_strlcatm", "cdecl"):
-    bu_strlcatm = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_strlcatm", "cdecl")
-    bu_strlcatm.argtypes = [String, String, c_size_t, String]
-    bu_strlcatm.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 56
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_strlcpym", "cdecl"):
-    bu_strlcpym = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_strlcpym", "cdecl")
-    bu_strlcpym.argtypes = [String, String, c_size_t, String]
-    bu_strlcpym.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 67
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_strdupm", "cdecl"):
-    bu_strdupm = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_strdupm", "cdecl")
-    bu_strdupm.argtypes = [String, String]
-    if sizeof(c_int) == sizeof(c_void_p):
-        bu_strdupm.restype = ReturnString
-    else:
-        bu_strdupm.restype = String
-        bu_strdupm.errcheck = ReturnString
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 77
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_strcmp", "cdecl"):
-    bu_strcmp = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_strcmp", "cdecl")
-    bu_strcmp.argtypes = [String, String]
-    bu_strcmp.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 87
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_strncmp", "cdecl"):
-    bu_strncmp = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_strncmp", "cdecl")
-    bu_strncmp.argtypes = [String, String, c_size_t]
-    bu_strncmp.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 97
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_strcasecmp", "cdecl"):
-    bu_strcasecmp = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_strcasecmp", "cdecl")
-    bu_strcasecmp.argtypes = [String, String]
-    bu_strcasecmp.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 108
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_strncasecmp", "cdecl"):
-    bu_strncasecmp = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_strncasecmp", "cdecl")
-    bu_strncasecmp.argtypes = [String, String, c_size_t]
-    bu_strncasecmp.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 210
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_str_escape", "cdecl"):
-    bu_str_escape = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_str_escape", "cdecl")
-    bu_str_escape.argtypes = [String, String, String, c_size_t]
-    if sizeof(c_int) == sizeof(c_void_p):
-        bu_str_escape.restype = ReturnString
-    else:
-        bu_str_escape.restype = String
-        bu_str_escape.errcheck = ReturnString
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 242
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_str_unescape", "cdecl"):
-    bu_str_unescape = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_str_unescape", "cdecl")
-    bu_str_unescape.argtypes = [String, String, c_size_t]
-    if sizeof(c_int) == sizeof(c_void_p):
-        bu_str_unescape.restype = ReturnString
-    else:
-        bu_str_unescape.restype = String
-        bu_str_unescape.errcheck = ReturnString
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 247
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_str_isprint", "cdecl"):
-    bu_str_isprint = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_str_isprint", "cdecl")
-    bu_str_isprint.argtypes = [String]
-    bu_str_isprint.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 265
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_str_true", "cdecl"):
-    bu_str_true = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_str_true", "cdecl")
-    bu_str_true.argtypes = [String]
-    bu_str_true.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 276
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_str_false", "cdecl"):
-    bu_str_false = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_str_false", "cdecl")
-    bu_str_false.argtypes = [String]
-    bu_str_false.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 300
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_argv_from_string", "cdecl"):
-    bu_argv_from_string = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_argv_from_string", "cdecl")
-    bu_argv_from_string.argtypes = [POINTER(POINTER(c_char)), c_size_t, String]
-    bu_argv_from_string.restype = c_size_t
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 309
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_argv_from_tcl_list", "cdecl"):
-    bu_argv_from_tcl_list = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_argv_from_tcl_list", "cdecl")
-    bu_argv_from_tcl_list.argtypes = [String, POINTER(c_int), POINTER(POINTER(POINTER(c_char)))]
-    bu_argv_from_tcl_list.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 319
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_argv_free", "cdecl"):
-    bu_argv_free = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_argv_free", "cdecl")
-    bu_argv_free.argtypes = [c_size_t, POINTER(POINTER(c_char))]
-    bu_argv_free.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 325
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_free_args", "cdecl"):
-    bu_free_args = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_free_args", "cdecl")
-    bu_free_args.argtypes = [c_size_t, POINTER(POINTER(c_char)), String]
-    bu_free_args.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 335
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_argv_dup", "cdecl"):
-    bu_argv_dup = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_argv_dup", "cdecl")
-    bu_argv_dup.argtypes = [c_size_t, POINTER(POINTER(c_char))]
-    bu_argv_dup.restype = POINTER(POINTER(c_char))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 347
-if _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].has("bu_argv_dupinsert", "cdecl"):
-    bu_argv_dupinsert = _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"].get("bu_argv_dupinsert", "cdecl")
-    bu_argv_dupinsert.argtypes = [c_int, c_size_t, POINTER(POINTER(c_char)), c_size_t, POINTER(POINTER(c_char))]
-    bu_argv_dupinsert.restype = POINTER(POINTER(c_char))
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/bn/version.h: 37
 if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("bn_version", "cdecl"):
@@ -2926,60 +1384,6 @@ struct_bu_color.__slots__ = [
 struct_bu_color._fields_ = [
     ('buc_rgb', hvect_t),
 ]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bn/str.h: 51
-if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("bn_decode_angle", "cdecl"):
-    bn_decode_angle = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("bn_decode_angle", "cdecl")
-    bn_decode_angle.argtypes = [POINTER(c_double), String]
-    bn_decode_angle.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bn/str.h: 53
-if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("bn_decode_mat", "cdecl"):
-    bn_decode_mat = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("bn_decode_mat", "cdecl")
-    bn_decode_mat.argtypes = [mat_t, String]
-    bn_decode_mat.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bn/str.h: 55
-if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("bn_decode_quat", "cdecl"):
-    bn_decode_quat = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("bn_decode_quat", "cdecl")
-    bn_decode_quat.argtypes = [quat_t, String]
-    bn_decode_quat.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bn/str.h: 57
-if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("bn_decode_vect", "cdecl"):
-    bn_decode_vect = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("bn_decode_vect", "cdecl")
-    bn_decode_vect.argtypes = [vect_t, String]
-    bn_decode_vect.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bn/str.h: 59
-if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("bn_decode_hvect", "cdecl"):
-    bn_decode_hvect = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("bn_decode_hvect", "cdecl")
-    bn_decode_hvect.argtypes = [hvect_t, String]
-    bn_decode_hvect.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bn/str.h: 61
-if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("bn_encode_mat", "cdecl"):
-    bn_encode_mat = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("bn_encode_mat", "cdecl")
-    bn_encode_mat.argtypes = [POINTER(struct_bu_vls), mat_t, c_int]
-    bn_encode_mat.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bn/str.h: 63
-if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("bn_encode_quat", "cdecl"):
-    bn_encode_quat = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("bn_encode_quat", "cdecl")
-    bn_encode_quat.argtypes = [POINTER(struct_bu_vls), quat_t, c_int]
-    bn_encode_quat.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bn/str.h: 65
-if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("bn_encode_vect", "cdecl"):
-    bn_encode_vect = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("bn_encode_vect", "cdecl")
-    bn_encode_vect.argtypes = [POINTER(struct_bu_vls), vect_t, c_int]
-    bn_encode_vect.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bn/str.h: 67
-if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("bn_encode_hvect", "cdecl"):
-    bn_encode_hvect = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("bn_encode_hvect", "cdecl")
-    bn_encode_hvect.argtypes = [POINTER(struct_bu_vls), hvect_t, c_int]
-    bn_encode_hvect.restype = None
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/bn/tabdata.h: 90
 class struct_bn_table(Structure):
@@ -3205,6 +1609,24 @@ struct_bg_tess_tol._fields_ = [
     ('rel_lmax', c_double),
     ('rel_lmin', c_double),
 ]
+
+enum_anon_31 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
+
+DB_OP_NULL = 0# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
+
+DB_OP_UNION = b'u'# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
+
+DB_OP_SUBTRACT = b'-'# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
+
+DB_OP_INTERSECT = b'+'# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
+
+db_op_t = enum_anon_31# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 72
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("db_str2op", "cdecl"):
+    db_str2op = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("db_str2op", "cdecl")
+    db_str2op.argtypes = [String]
+    db_str2op.restype = db_op_t
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/./rt/db5.h: 56
 class struct_db5_ondisk_header(Structure):
@@ -7784,150 +6206,6 @@ struct_pc_pc_set._fields_ = [
     ('ps', POINTER(struct_pc_param)),
     ('cs', POINTER(struct_pc_constrnt)),
 ]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 112
-for _lib in _libs.values():
-    if not _lib.has("pc_init_pcset", "cdecl"):
-        continue
-    pc_init_pcset = _lib.get("pc_init_pcset", "cdecl")
-    pc_init_pcset.argtypes = [POINTER(struct_pc_pc_set)]
-    pc_init_pcset.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 113
-for _lib in _libs.values():
-    if not _lib.has("pc_free_pcset", "cdecl"):
-        continue
-    pc_free_pcset = _lib.get("pc_free_pcset", "cdecl")
-    pc_free_pcset.argtypes = [POINTER(struct_pc_pc_set)]
-    pc_free_pcset.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 114
-for _lib in _libs.values():
-    if not _lib.has("pc_free_constraint", "cdecl"):
-        continue
-    pc_free_constraint = _lib.get("pc_free_constraint", "cdecl")
-    pc_free_constraint.argtypes = [POINTER(struct_pc_constrnt)]
-    pc_free_constraint.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 115
-for _lib in _libs.values():
-    if not _lib.has("pc_getparameter", "cdecl"):
-        continue
-    pc_getparameter = _lib.get("pc_getparameter", "cdecl")
-    pc_getparameter.argtypes = [POINTER(POINTER(struct_pc_param)), c_int]
-    pc_getparameter.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 116
-for _lib in _libs.values():
-    if not _lib.has("pc_pushparam_expr", "cdecl"):
-        continue
-    pc_pushparam_expr = _lib.get("pc_pushparam_expr", "cdecl")
-    pc_pushparam_expr.argtypes = [POINTER(struct_pc_pc_set), String, String]
-    pc_pushparam_expr.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 117
-for _lib in _libs.values():
-    if not _lib.has("pc_pushparam_struct", "cdecl"):
-        continue
-    pc_pushparam_struct = _lib.get("pc_pushparam_struct", "cdecl")
-    pc_pushparam_struct.argtypes = [POINTER(struct_pc_pc_set), String, c_int, POINTER(None)]
-    pc_pushparam_struct.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 118
-for _lib in _libs.values():
-    if not _lib.has("pc_getconstraint_expr", "cdecl"):
-        continue
-    pc_getconstraint_expr = _lib.get("pc_getconstraint_expr", "cdecl")
-    pc_getconstraint_expr.argtypes = [POINTER(POINTER(struct_pc_constrnt))]
-    pc_getconstraint_expr.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 119
-for _lib in _libs.values():
-    if not _lib.has("pc_getconstraint_struct", "cdecl"):
-        continue
-    pc_getconstraint_struct = _lib.get("pc_getconstraint_struct", "cdecl")
-    pc_getconstraint_struct.argtypes = [POINTER(POINTER(struct_pc_constrnt)), c_int]
-    pc_getconstraint_struct.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 120
-for _lib in _libs.values():
-    if not _lib.has("pc_pushconstraint_expr", "cdecl"):
-        continue
-    pc_pushconstraint_expr = _lib.get("pc_pushconstraint_expr", "cdecl")
-    pc_pushconstraint_expr.argtypes = [POINTER(struct_pc_pc_set), String, String]
-    pc_pushconstraint_expr.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 121
-for _lib in _libs.values():
-    if not _lib.has("pc_pushconstraint_struct", "cdecl"):
-        continue
-    pc_pushconstraint_struct = _lib.get("pc_pushconstraint_struct", "cdecl")
-    pc_pushconstraint_struct.argtypes = [POINTER(struct_pc_pc_set), String, c_int, c_int, CFUNCTYPE(UNCHECKED(c_int), POINTER(POINTER(c_double))), POINTER(POINTER(c_char))]
-    pc_pushconstraint_struct.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 122
-for _lib in _libs.values():
-    if not _lib.has("pc_pushconstraint_struct1", "cdecl"):
-        continue
-    pc_pushconstraint_struct1 = _lib.get("pc_pushconstraint_struct1", "cdecl")
-    pc_pushconstraint_struct1.argtypes = [POINTER(struct_pc_pc_set), POINTER(struct_pc_constrnt)]
-    pc_pushconstraint_struct1.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 123
-for _lib in _libs.values():
-    if not _lib.has("pc_pushconstraint", "cdecl"):
-        continue
-    pc_pushconstraint = _lib.get("pc_pushconstraint", "cdecl")
-    pc_pushconstraint.argtypes = [POINTER(struct_pc_pc_set), String]
-    pc_pushconstraint.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 127
-for _lib in _libs.values():
-    if not _lib.has("pc_isperpendicular", "cdecl"):
-        continue
-    pc_isperpendicular = _lib.get("pc_isperpendicular", "cdecl")
-    pc_isperpendicular.argtypes = [POINTER(POINTER(c_double))]
-    pc_isperpendicular.restype = c_int
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 128
-for _lib in _libs.values():
-    if not _lib.has("pc_mk_isperpendicular", "cdecl"):
-        continue
-    pc_mk_isperpendicular = _lib.get("pc_mk_isperpendicular", "cdecl")
-    pc_mk_isperpendicular.argtypes = [POINTER(POINTER(struct_pc_constrnt)), String, POINTER(POINTER(c_char))]
-    pc_mk_isperpendicular.restype = None
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 129
-for _lib in _libs.values():
-    if not _lib.has("pc_ismodpositive", "cdecl"):
-        continue
-    pc_ismodpositive = _lib.get("pc_ismodpositive", "cdecl")
-    pc_ismodpositive.argtypes = [POINTER(POINTER(c_double))]
-    pc_ismodpositive.restype = c_int
-    break
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 130
-for _lib in _libs.values():
-    if not _lib.has("pc_mk_ismodpositive", "cdecl"):
-        continue
-    pc_mk_ismodpositive = _lib.get("pc_mk_ismodpositive", "cdecl")
-    pc_mk_ismodpositive.argtypes = [POINTER(POINTER(struct_pc_constrnt)), String, POINTER(POINTER(c_char))]
-    pc_mk_ismodpositive.restype = None
-    break
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/brep/defines.h: 85
 class struct__on_brep_placeholder(Structure):
@@ -12638,7 +10916,7 @@ if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("db_fwrite_external", "cdecl
     db_fwrite_external.argtypes = [POINTER(FILE), String, POINTER(struct_bu_external)]
     db_fwrite_external.restype = c_int
 
-# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/db_io.h: 474
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 421
 class union_record(Union):
     pass
 
@@ -13908,25 +12186,981 @@ if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("rt_version", "cdecl"):
     rt_version.argtypes = []
     rt_version.restype = c_char_p
 
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 146
-def FMAX(a, b):
-    return (a > b) and a or b
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/solid.h: 38
+class struct_solid(Structure):
+    pass
 
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 150
-def FMIN(a, b):
-    return (a < b) and a or b
+struct_solid.__slots__ = [
+    'l',
+    's_size',
+    's_csize',
+    's_center',
+    's_vlist',
+    's_vlen',
+    's_fullpath',
+    's_flag',
+    's_iflag',
+    's_soldash',
+    's_Eflag',
+    's_uflag',
+    's_dflag',
+    's_cflag',
+    's_wflag',
+    's_basecolor',
+    's_color',
+    's_regionid',
+    's_dlist',
+    's_transparency',
+    's_dmode',
+    's_hiddenLine',
+    's_mat',
+]
+struct_solid._fields_ = [
+    ('l', struct_bu_list),
+    ('s_size', fastf_t),
+    ('s_csize', fastf_t),
+    ('s_center', vect_t),
+    ('s_vlist', struct_bu_list),
+    ('s_vlen', c_int),
+    ('s_fullpath', struct_db_full_path),
+    ('s_flag', c_char),
+    ('s_iflag', c_char),
+    ('s_soldash', c_char),
+    ('s_Eflag', c_char),
+    ('s_uflag', c_char),
+    ('s_dflag', c_char),
+    ('s_cflag', c_char),
+    ('s_wflag', c_char),
+    ('s_basecolor', c_ubyte * int(3)),
+    ('s_color', c_ubyte * int(3)),
+    ('s_regionid', c_short),
+    ('s_dlist', c_uint),
+    ('s_transparency', fastf_t),
+    ('s_dmode', c_int),
+    ('s_hiddenLine', c_int),
+    ('s_mat', mat_t),
+]
 
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 159
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 51
+class struct_diff_avp(Structure):
+    pass
+
+struct_diff_avp.__slots__ = [
+    'name',
+    'state',
+    'left_value',
+    'ancestor_value',
+    'right_value',
+]
+struct_diff_avp._fields_ = [
+    ('name', String),
+    ('state', c_int),
+    ('left_value', String),
+    ('ancestor_value', String),
+    ('right_value', String),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 58
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("diff_init_avp", "cdecl"):
+    diff_init_avp = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("diff_init_avp", "cdecl")
+    diff_init_avp.argtypes = [POINTER(struct_diff_avp)]
+    diff_init_avp.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 59
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("diff_free_avp", "cdecl"):
+    diff_free_avp = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("diff_free_avp", "cdecl")
+    diff_free_avp.argtypes = [POINTER(struct_diff_avp)]
+    diff_free_avp.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 60
+class struct_diff_result(Structure):
+    pass
+
+struct_diff_result.__slots__ = [
+    'obj_name',
+    'diff_tol',
+    'dp_left',
+    'dp_ancestor',
+    'dp_right',
+    'param_state',
+    'attr_state',
+    'param_diffs',
+    'attr_diffs',
+]
+struct_diff_result._fields_ = [
+    ('obj_name', String),
+    ('diff_tol', POINTER(struct_bn_tol)),
+    ('dp_left', POINTER(struct_directory)),
+    ('dp_ancestor', POINTER(struct_directory)),
+    ('dp_right', POINTER(struct_directory)),
+    ('param_state', c_int),
+    ('attr_state', c_int),
+    ('param_diffs', POINTER(struct_bu_ptbl)),
+    ('attr_diffs', POINTER(struct_bu_ptbl)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 71
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("diff_init_result", "cdecl"):
+    diff_init_result = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("diff_init_result", "cdecl")
+    diff_init_result.argtypes = [POINTER(struct_diff_result), POINTER(struct_bn_tol), String]
+    diff_init_result.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 72
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("diff_free_result", "cdecl"):
+    diff_free_result = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("diff_free_result", "cdecl")
+    diff_free_result.argtypes = [POINTER(struct_diff_result)]
+    diff_free_result.restype = None
+
+enum_anon_65 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
+
+DB_COMPARE_ALL = 0# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
+
+DB_COMPARE_PARAM = 1# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
+
+DB_COMPARE_ATTRS = 2# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
+
+db_compare_criteria_t = enum_anon_65# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 92
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("db_avs_diff", "cdecl"):
+    db_avs_diff = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("db_avs_diff", "cdecl")
+    db_avs_diff.argtypes = [POINTER(struct_bu_attribute_value_set), POINTER(struct_bu_attribute_value_set), POINTER(struct_bn_tol), CFUNCTYPE(UNCHECKED(c_int), String, String, POINTER(None)), CFUNCTYPE(UNCHECKED(c_int), String, String, POINTER(None)), CFUNCTYPE(UNCHECKED(c_int), String, String, String, POINTER(None)), CFUNCTYPE(UNCHECKED(c_int), String, String, POINTER(None)), POINTER(None)]
+    db_avs_diff.restype = c_int
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 105
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("db_avs_diff3", "cdecl"):
+    db_avs_diff3 = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("db_avs_diff3", "cdecl")
+    db_avs_diff3.argtypes = [POINTER(struct_bu_attribute_value_set), POINTER(struct_bu_attribute_value_set), POINTER(struct_bu_attribute_value_set), POINTER(struct_bn_tol), CFUNCTYPE(UNCHECKED(c_int), String, String, String, POINTER(None)), CFUNCTYPE(UNCHECKED(c_int), String, String, String, String, POINTER(None)), CFUNCTYPE(UNCHECKED(c_int), String, String, String, String, POINTER(None)), CFUNCTYPE(UNCHECKED(c_int), String, String, String, String, POINTER(None)), CFUNCTYPE(UNCHECKED(c_int), String, String, POINTER(None)), POINTER(None)]
+    db_avs_diff3.restype = c_int
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 157
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("db_diff_dp", "cdecl"):
+    db_diff_dp = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("db_diff_dp", "cdecl")
+    db_diff_dp.argtypes = [POINTER(struct_db_i), POINTER(struct_db_i), POINTER(struct_directory), POINTER(struct_directory), POINTER(struct_bn_tol), db_compare_criteria_t, POINTER(struct_diff_result)]
+    db_diff_dp.restype = c_int
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 185
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("db_diff3_dp", "cdecl"):
+    db_diff3_dp = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("db_diff3_dp", "cdecl")
+    db_diff3_dp.argtypes = [POINTER(struct_db_i), POINTER(struct_db_i), POINTER(struct_db_i), POINTER(struct_directory), POINTER(struct_directory), POINTER(struct_directory), POINTER(struct_bn_tol), db_compare_criteria_t, POINTER(struct_diff_result)]
+    db_diff3_dp.restype = c_int
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 214
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("db_diff", "cdecl"):
+    db_diff = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("db_diff", "cdecl")
+    db_diff.argtypes = [POINTER(struct_db_i), POINTER(struct_db_i), POINTER(struct_bn_tol), db_compare_criteria_t, POINTER(struct_bu_ptbl)]
+    db_diff.restype = c_int
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 234
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("db_diff3", "cdecl"):
+    db_diff3 = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("db_diff3", "cdecl")
+    db_diff3.argtypes = [POINTER(struct_db_i), POINTER(struct_db_i), POINTER(struct_db_i), POINTER(struct_bn_tol), db_compare_criteria_t, POINTER(struct_bu_ptbl)]
+    db_diff3.restype = c_int
+
+TFLOAT = c_double# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 65
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 78
+class struct_TIE_3_s(Structure):
+    pass
+
+struct_TIE_3_s.__slots__ = [
+    'v',
+]
+struct_TIE_3_s._fields_ = [
+    ('v', TFLOAT * int(3)),
+]
+
+TIE_3 = struct_TIE_3_s# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 78
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 80
+class struct_tie_ray_s(Structure):
+    pass
+
+struct_tie_ray_s.__slots__ = [
+    'pos',
+    'dir',
+    'depth',
+    'kdtree_depth',
+]
+struct_tie_ray_s._fields_ = [
+    ('pos', point_t),
+    ('dir', vect_t),
+    ('depth', c_short),
+    ('kdtree_depth', c_short),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 87
+class struct_tie_id_s(Structure):
+    pass
+
+struct_tie_id_s.__slots__ = [
+    'pos',
+    'norm',
+    'dist',
+    'alpha',
+    'beta',
+]
+struct_tie_id_s._fields_ = [
+    ('pos', point_t),
+    ('norm', vect_t),
+    ('dist', fastf_t),
+    ('alpha', fastf_t),
+    ('beta', fastf_t),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 95
+class struct_tie_tri_s(Structure):
+    pass
+
+struct_tie_tri_s.__slots__ = [
+    'data',
+    'v',
+    'ptr',
+    'b',
+]
+struct_tie_tri_s._fields_ = [
+    ('data', TIE_3 * int(3)),
+    ('v', TFLOAT * int(2)),
+    ('ptr', POINTER(None)),
+    ('b', c_uint32),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 107
+class struct_tie_kdtree_s(Structure):
+    pass
+
+struct_tie_kdtree_s.__slots__ = [
+    'axis',
+    'b',
+    'data',
+]
+struct_tie_kdtree_s._fields_ = [
+    ('axis', c_float),
+    ('b', c_uint32),
+    ('data', POINTER(None)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 114
+class struct_tie_s(Structure):
+    pass
+
+struct_tie_s.__slots__ = [
+    'rays_fired',
+    'kdtree',
+    'max_depth',
+    'tri_num',
+    'tri_num_alloc',
+    'tri_list',
+    'stat',
+    'kdmethod',
+    'min',
+    'max',
+    'amin',
+    'amax',
+    'mid',
+    'radius',
+]
+struct_tie_s._fields_ = [
+    ('rays_fired', c_uint64),
+    ('kdtree', POINTER(struct_tie_kdtree_s)),
+    ('max_depth', c_uint),
+    ('tri_num', c_uint),
+    ('tri_num_alloc', c_uint),
+    ('tri_list', POINTER(struct_tie_tri_s)),
+    ('stat', c_int),
+    ('kdmethod', c_uint),
+    ('min', point_t),
+    ('max', point_t),
+    ('amin', vect_t),
+    ('amax', vect_t),
+    ('mid', vect_t),
+    ('radius', fastf_t),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 128
 try:
-    HAVE_U_TYPES = 1
+    tie_check_degenerate = (c_int).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/librt.so"], "tie_check_degenerate")
 except:
     pass
 
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 165
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 129
 try:
-    _FILE_OFFSET_BITS = 64
+    TIE_PREC = (fastf_t).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/librt.so"], "TIE_PREC")
 except:
     pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 139
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("tie_init_double", "cdecl"):
+    tie_init_double = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("tie_init_double", "cdecl")
+    tie_init_double.argtypes = [POINTER(struct_tie_s), c_uint, c_uint]
+    tie_init_double.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 140
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("tie_free_double", "cdecl"):
+    tie_free_double = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("tie_free_double", "cdecl")
+    tie_free_double.argtypes = [POINTER(struct_tie_s)]
+    tie_free_double.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 141
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("tie_prep_double", "cdecl"):
+    tie_prep_double = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("tie_prep_double", "cdecl")
+    tie_prep_double.argtypes = [POINTER(struct_tie_s)]
+    tie_prep_double.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 142
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("tie_work_double", "cdecl"):
+    tie_work_double = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("tie_work_double", "cdecl")
+    tie_work_double.argtypes = [POINTER(struct_tie_s), POINTER(struct_tie_ray_s), POINTER(struct_tie_id_s), CFUNCTYPE(UNCHECKED(POINTER(c_ubyte)), POINTER(struct_tie_ray_s), POINTER(struct_tie_id_s), POINTER(struct_tie_tri_s), POINTER(None)), POINTER(None)]
+    tie_work_double.restype = POINTER(c_ubyte)
+    tie_work_double.errcheck = lambda v,*a : cast(v, c_void_p)
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 143
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("tie_push_double", "cdecl"):
+    tie_push_double = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("tie_push_double", "cdecl")
+    tie_push_double.argtypes = [POINTER(struct_tie_s), POINTER(POINTER(TIE_3)), c_uint, POINTER(None), c_uint]
+    tie_push_double.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 144
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("tie_kdtree_free_double", "cdecl"):
+    tie_kdtree_free_double = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("tie_kdtree_free_double", "cdecl")
+    tie_kdtree_free_double.argtypes = [POINTER(struct_tie_s)]
+    tie_kdtree_free_double.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 145
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("tie_kdtree_prep_double", "cdecl"):
+    tie_kdtree_prep_double = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("tie_kdtree_prep_double", "cdecl")
+    tie_kdtree_prep_double.argtypes = [POINTER(struct_tie_s)]
+    tie_kdtree_prep_double.restype = None
+
+dbfloat_t = c_float# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 83
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 88
+class struct_ident(Structure):
+    pass
+
+struct_ident.__slots__ = [
+    'i_id',
+    'i_units',
+    'i_version',
+    'i_title',
+    'i_byteorder',
+    'i_floattype',
+]
+struct_ident._fields_ = [
+    ('i_id', c_char),
+    ('i_units', c_char),
+    ('i_version', c_char * int(6)),
+    ('i_title', c_char * int(72)),
+    ('i_byteorder', c_char),
+    ('i_floattype', c_char),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 119
+class struct_solidrec(Structure):
+    pass
+
+struct_solidrec.__slots__ = [
+    's_id',
+    's_type',
+    's_name',
+    's_cgtype',
+    's_values',
+]
+struct_solidrec._fields_ = [
+    ('s_id', c_char),
+    ('s_type', c_char),
+    ('s_name', c_char * int(16)),
+    ('s_cgtype', c_short),
+    ('s_values', dbfloat_t * int(24)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 194
+class struct_combination(Structure):
+    pass
+
+struct_combination.__slots__ = [
+    'c_id',
+    'c_flags',
+    'c_name',
+    'c_regionid',
+    'c_aircode',
+    'c_pad1',
+    'c_pad2',
+    'c_material',
+    'c_los',
+    'c_override',
+    'c_rgb',
+    'c_matname',
+    'c_matparm',
+    'c_inherit',
+]
+struct_combination._fields_ = [
+    ('c_id', c_char),
+    ('c_flags', c_char),
+    ('c_name', c_char * int(16)),
+    ('c_regionid', c_short),
+    ('c_aircode', c_short),
+    ('c_pad1', c_short),
+    ('c_pad2', c_short),
+    ('c_material', c_short),
+    ('c_los', c_short),
+    ('c_override', c_char),
+    ('c_rgb', c_ubyte * int(3)),
+    ('c_matname', c_char * int(32)),
+    ('c_matparm', c_char * int(60)),
+    ('c_inherit', c_char),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 218
+class struct_member(Structure):
+    pass
+
+struct_member.__slots__ = [
+    'm_id',
+    'm_relation',
+    'm_brname',
+    'm_instname',
+    'm_pad1',
+    'm_mat',
+    'm_pad2',
+]
+struct_member._fields_ = [
+    ('m_id', c_char),
+    ('m_relation', c_char),
+    ('m_brname', c_char * int(16)),
+    ('m_instname', c_char * int(16)),
+    ('m_pad1', c_short),
+    ('m_mat', dbfloat_t * int(16)),
+    ('m_pad2', c_short),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 228
+class struct_material_rec(Structure):
+    pass
+
+struct_material_rec.__slots__ = [
+    'md_id',
+    'md_flags',
+    'md_low',
+    'md_hi',
+    'md_r',
+    'md_g',
+    'md_b',
+    'md_material',
+]
+struct_material_rec._fields_ = [
+    ('md_id', c_char),
+    ('md_flags', c_char),
+    ('md_low', c_short),
+    ('md_hi', c_short),
+    ('md_r', c_ubyte),
+    ('md_g', c_ubyte),
+    ('md_b', c_ubyte),
+    ('md_material', c_char * int(100)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 239
+class struct_B_solid(Structure):
+    pass
+
+struct_B_solid.__slots__ = [
+    'B_id',
+    'B_pad',
+    'B_name',
+    'B_nsurf',
+    'B_unused',
+]
+struct_B_solid._fields_ = [
+    ('B_id', c_char),
+    ('B_pad', c_char),
+    ('B_name', c_char * int(16)),
+    ('B_nsurf', c_short),
+    ('B_unused', dbfloat_t),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 247
+class struct_b_surf(Structure):
+    pass
+
+struct_b_surf.__slots__ = [
+    'd_id',
+    'd_order',
+    'd_kv_size',
+    'd_ctl_size',
+    'd_geom_type',
+    'd_nknots',
+    'd_nctls',
+]
+struct_b_surf._fields_ = [
+    ('d_id', c_char),
+    ('d_order', c_short * int(2)),
+    ('d_kv_size', c_short * int(2)),
+    ('d_ctl_size', c_short * int(2)),
+    ('d_geom_type', c_short),
+    ('d_nknots', c_short),
+    ('d_nctls', c_short),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 257
+class struct_polyhead(Structure):
+    pass
+
+struct_polyhead.__slots__ = [
+    'p_id',
+    'p_pad1',
+    'p_name',
+]
+struct_polyhead._fields_ = [
+    ('p_id', c_char),
+    ('p_pad1', c_char),
+    ('p_name', c_char * int(16)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 263
+class struct_polydata(Structure):
+    pass
+
+struct_polydata.__slots__ = [
+    'q_id',
+    'q_count',
+    'q_verts',
+    'q_norms',
+]
+struct_polydata._fields_ = [
+    ('q_id', c_char),
+    ('q_count', c_char),
+    ('q_verts', (dbfloat_t * int(3)) * int(5)),
+    ('q_norms', (dbfloat_t * int(3)) * int(5)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 270
+class struct_ars_rec(Structure):
+    pass
+
+struct_ars_rec.__slots__ = [
+    'a_id',
+    'a_type',
+    'a_name',
+    'a_m',
+    'a_n',
+    'a_curlen',
+    'a_totlen',
+    'a_pad',
+    'a_xmax',
+    'a_xmin',
+    'a_ymax',
+    'a_ymin',
+    'a_zmax',
+    'a_zmin',
+]
+struct_ars_rec._fields_ = [
+    ('a_id', c_char),
+    ('a_type', c_char),
+    ('a_name', c_char * int(16)),
+    ('a_m', c_short),
+    ('a_n', c_short),
+    ('a_curlen', c_short),
+    ('a_totlen', c_short),
+    ('a_pad', c_short),
+    ('a_xmax', dbfloat_t),
+    ('a_xmin', dbfloat_t),
+    ('a_ymax', dbfloat_t),
+    ('a_ymin', dbfloat_t),
+    ('a_zmax', dbfloat_t),
+    ('a_zmin', dbfloat_t),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 289
+class struct_ars_ext(Structure):
+    pass
+
+struct_ars_ext.__slots__ = [
+    'b_id',
+    'b_type',
+    'b_n',
+    'b_ngranule',
+    'b_pad',
+    'b_values',
+]
+struct_ars_ext._fields_ = [
+    ('b_id', c_char),
+    ('b_type', c_char),
+    ('b_n', c_short),
+    ('b_ngranule', c_short),
+    ('b_pad', c_short),
+    ('b_values', dbfloat_t * int((8 * 3))),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 298
+class struct_strsol(Structure):
+    pass
+
+struct_strsol.__slots__ = [
+    'ss_id',
+    'ss_pad',
+    'ss_name',
+    'ss_keyword',
+    'ss_args',
+]
+struct_strsol._fields_ = [
+    ('ss_id', c_char),
+    ('ss_pad', c_char),
+    ('ss_name', c_char * int(16)),
+    ('ss_keyword', c_char * int(16)),
+    ('ss_args', c_char * int(4)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 308
+class struct_arbn_rec(Structure):
+    pass
+
+struct_arbn_rec.__slots__ = [
+    'n_id',
+    'n_pad',
+    'n_name',
+    'n_neqn',
+    'n_grans',
+]
+struct_arbn_rec._fields_ = [
+    ('n_id', c_char),
+    ('n_pad', c_char),
+    ('n_name', c_char * int(16)),
+    ('n_neqn', c_ubyte * int(4)),
+    ('n_grans', c_ubyte * int(4)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 317
+class struct_exported_pipe_pnt(Structure):
+    pass
+
+struct_exported_pipe_pnt.__slots__ = [
+    'epp_coord',
+    'epp_bendradius',
+    'epp_id',
+    'epp_od',
+]
+struct_exported_pipe_pnt._fields_ = [
+    ('epp_coord', c_ubyte * int((8 * 3))),
+    ('epp_bendradius', c_ubyte * int(8)),
+    ('epp_id', c_ubyte * int(8)),
+    ('epp_od', c_ubyte * int(8)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 324
+class struct_pipewire_rec(Structure):
+    pass
+
+struct_pipewire_rec.__slots__ = [
+    'pwr_id',
+    'pwr_pad',
+    'pwr_name',
+    'pwr_pt_count',
+    'pwr_count',
+    'pwr_data',
+]
+struct_pipewire_rec._fields_ = [
+    ('pwr_id', c_char),
+    ('pwr_pad', c_char),
+    ('pwr_name', c_char * int(16)),
+    ('pwr_pt_count', c_ubyte * int(4)),
+    ('pwr_count', c_ubyte * int(4)),
+    ('pwr_data', struct_exported_pipe_pnt * int(1)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 333
+class struct_particle_rec(Structure):
+    pass
+
+struct_particle_rec.__slots__ = [
+    'p_id',
+    'p_pad',
+    'p_name',
+    'p_v',
+    'p_h',
+    'p_vrad',
+    'p_hrad',
+]
+struct_particle_rec._fields_ = [
+    ('p_id', c_char),
+    ('p_pad', c_char),
+    ('p_name', c_char * int(16)),
+    ('p_v', c_ubyte * int((8 * 3))),
+    ('p_h', c_ubyte * int((8 * 3))),
+    ('p_vrad', c_ubyte * int(8)),
+    ('p_hrad', c_ubyte * int(8)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 343
+class struct_nmg_rec(Structure):
+    pass
+
+struct_nmg_rec.__slots__ = [
+    'N_id',
+    'N_version',
+    'N_name',
+    'N_pad2',
+    'N_count',
+    'N_structs',
+]
+struct_nmg_rec._fields_ = [
+    ('N_id', c_char),
+    ('N_version', c_char),
+    ('N_name', c_char * int(16)),
+    ('N_pad2', c_char * int(2)),
+    ('N_count', c_ubyte * int(4)),
+    ('N_structs', c_ubyte * int((26 * 4))),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 352
+class struct_extr_rec(Structure):
+    pass
+
+struct_extr_rec.__slots__ = [
+    'ex_id',
+    'ex_pad',
+    'ex_name',
+    'ex_V',
+    'ex_h',
+    'ex_uvec',
+    'ex_vvec',
+    'ex_key',
+    'ex_count',
+]
+struct_extr_rec._fields_ = [
+    ('ex_id', c_char),
+    ('ex_pad', c_char),
+    ('ex_name', c_char * int(16)),
+    ('ex_V', c_ubyte * int((8 * 3))),
+    ('ex_h', c_ubyte * int((8 * 3))),
+    ('ex_uvec', c_ubyte * int((8 * 3))),
+    ('ex_vvec', c_ubyte * int((8 * 3))),
+    ('ex_key', c_ubyte * int(4)),
+    ('ex_count', c_ubyte * int(4)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 365
+class struct_sketch_rec(Structure):
+    pass
+
+struct_sketch_rec.__slots__ = [
+    'skt_id',
+    'skt_pad',
+    'skt_name',
+    'skt_V',
+    'skt_uvec',
+    'skt_vvec',
+    'skt_vert_count',
+    'skt_seg_count',
+    'skt_count',
+]
+struct_sketch_rec._fields_ = [
+    ('skt_id', c_char),
+    ('skt_pad', c_char),
+    ('skt_name', c_char * int(16)),
+    ('skt_V', c_ubyte * int((8 * 3))),
+    ('skt_uvec', c_ubyte * int((8 * 3))),
+    ('skt_vvec', c_ubyte * int((8 * 3))),
+    ('skt_vert_count', c_ubyte * int(4)),
+    ('skt_seg_count', c_ubyte * int(4)),
+    ('skt_count', c_ubyte * int(4)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 377
+class struct_annot_rec(Structure):
+    pass
+
+struct_annot_rec.__slots__ = [
+    'ant_id',
+    'ant_pad',
+    'ant_name',
+    'ant_V',
+    'ant_vert_count',
+    'ant_seg_count',
+    'ant_count',
+]
+struct_annot_rec._fields_ = [
+    ('ant_id', c_char),
+    ('ant_pad', c_char),
+    ('ant_name', c_char * int(16)),
+    ('ant_V', c_ubyte * int((8 * 3))),
+    ('ant_vert_count', c_ubyte * int(4)),
+    ('ant_seg_count', c_ubyte * int(4)),
+    ('ant_count', c_ubyte * int(4)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 387
+class struct_script_rec(Structure):
+    pass
+
+struct_script_rec.__slots__ = [
+    'script_id',
+    'script_pad',
+    'script_name',
+]
+struct_script_rec._fields_ = [
+    ('script_id', c_char),
+    ('script_pad', c_char),
+    ('script_name', c_char * int(16)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 393
+class struct_cline_rec(Structure):
+    pass
+
+struct_cline_rec.__slots__ = [
+    'cli_id',
+    'cli_pad',
+    'cli_name',
+    'cli_V',
+    'cli_h',
+    'cli_radius',
+    'cli_thick',
+]
+struct_cline_rec._fields_ = [
+    ('cli_id', c_char),
+    ('cli_pad', c_char),
+    ('cli_name', c_char * int(16)),
+    ('cli_V', c_ubyte * int((8 * 3))),
+    ('cli_h', c_ubyte * int((8 * 3))),
+    ('cli_radius', c_ubyte * int(8)),
+    ('cli_thick', c_ubyte * int(8)),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 403
+class struct_bot_rec(Structure):
+    pass
+
+struct_bot_rec.__slots__ = [
+    'bot_id',
+    'bot_pad',
+    'bot_name',
+    'bot_nrec',
+    'bot_orientation',
+    'bot_mode',
+    'bot_err_mode',
+    'bot_num_verts',
+    'bot_num_triangles',
+    'bot_data',
+]
+struct_bot_rec._fields_ = [
+    ('bot_id', c_char),
+    ('bot_pad', c_char),
+    ('bot_name', c_char * int(16)),
+    ('bot_nrec', c_ubyte * int(4)),
+    ('bot_orientation', c_ubyte),
+    ('bot_mode', c_ubyte),
+    ('bot_err_mode', c_ubyte),
+    ('bot_num_verts', c_ubyte * int(4)),
+    ('bot_num_triangles', c_ubyte * int(4)),
+    ('bot_data', c_ubyte * int(1)),
+]
+
+union_record.__slots__ = [
+    'u_id',
+    'u_size',
+    'i',
+    's',
+    'c',
+    'M',
+    'md',
+    'B',
+    'd',
+    'p',
+    'q',
+    'a',
+    'b',
+    'ss',
+    'n',
+    'pwr',
+    'part',
+    'nmg',
+    'extr',
+    'skt',
+    'ant',
+    'scr',
+    'cli',
+    'bot',
+]
+union_record._fields_ = [
+    ('u_id', c_char),
+    ('u_size', c_char * int(128)),
+    ('i', struct_ident),
+    ('s', struct_solidrec),
+    ('c', struct_combination),
+    ('M', struct_member),
+    ('md', struct_material_rec),
+    ('B', struct_B_solid),
+    ('d', struct_b_surf),
+    ('p', struct_polyhead),
+    ('q', struct_polydata),
+    ('a', struct_ars_rec),
+    ('b', struct_ars_ext),
+    ('ss', struct_strsol),
+    ('n', struct_arbn_rec),
+    ('pwr', struct_pipewire_rec),
+    ('part', struct_particle_rec),
+    ('nmg', struct_nmg_rec),
+    ('extr', struct_extr_rec),
+    ('skt', struct_sketch_rec),
+    ('ant', struct_annot_rec),
+    ('scr', struct_script_rec),
+    ('cli', struct_cline_rec),
+    ('bot', struct_bot_rec),
+]
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 505
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("rt_fastf_float", "cdecl"):
+    rt_fastf_float = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("rt_fastf_float", "cdecl")
+    rt_fastf_float.argtypes = [POINTER(fastf_t), POINTER(dbfloat_t), c_int, c_int]
+    rt_fastf_float.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 508
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("rt_mat_dbmat", "cdecl"):
+    rt_mat_dbmat = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("rt_mat_dbmat", "cdecl")
+    rt_mat_dbmat.argtypes = [POINTER(fastf_t), POINTER(dbfloat_t), c_int]
+    rt_mat_dbmat.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 511
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("rt_dbmat_mat", "cdecl"):
+    rt_dbmat_mat = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("rt_dbmat_mat", "cdecl")
+    rt_dbmat_mat.argtypes = [POINTER(dbfloat_t), POINTER(fastf_t)]
+    rt_dbmat_mat.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/arb_edit.h: 382
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("ext4to6", "cdecl"):
+    ext4to6 = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("ext4to6", "cdecl")
+    ext4to6.argtypes = [c_int, c_int, c_int, POINTER(struct_rt_arb_internal), (fastf_t * int(4)) * int(7)]
+    ext4to6.restype = None
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/arb_edit.h: 393
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("mv_edge", "cdecl"):
+    mv_edge = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("mv_edge", "cdecl")
+    mv_edge.argtypes = [POINTER(struct_rt_arb_internal), vect_t, c_int, c_int, c_int, c_int, vect_t, POINTER(struct_bn_tol), (fastf_t * int(4)) * int(7)]
+    mv_edge.restype = c_int
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/arb_edit.h: 403
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("arb_extrude", "cdecl"):
+    arb_extrude = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("arb_extrude", "cdecl")
+    arb_extrude.argtypes = [POINTER(struct_rt_arb_internal), c_int, fastf_t, POINTER(struct_bn_tol), (fastf_t * int(4)) * int(7)]
+    arb_extrude.restype = c_int
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/arb_edit.h: 424
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("arb_permute", "cdecl"):
+    arb_permute = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("arb_permute", "cdecl")
+    arb_permute.argtypes = [POINTER(struct_rt_arb_internal), String, POINTER(struct_bn_tol)]
+    arb_permute.restype = c_int
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/arb_edit.h: 429
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("arb_mirror_face_axis", "cdecl"):
+    arb_mirror_face_axis = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("arb_mirror_face_axis", "cdecl")
+    arb_mirror_face_axis.argtypes = [POINTER(struct_rt_arb_internal), (fastf_t * int(4)) * int(7), c_int, String, POINTER(struct_bn_tol)]
+    arb_mirror_face_axis.restype = c_int
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/arb_edit.h: 439
+if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("arb_edit", "cdecl"):
+    arb_edit = _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].get("arb_edit", "cdecl")
+    arb_edit.argtypes = [POINTER(struct_rt_arb_internal), (fastf_t * int(4)) * int(7), c_int, c_int, vect_t, POINTER(struct_bn_tol)]
+    arb_edit.restype = c_int
 
 # /usr/include/linux/limits.h: 13
 try:
@@ -13934,47 +13168,9 @@ try:
 except:
     pass
 
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 196
-try:
-    __STDC_LIMIT_MACROS = 1
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 199
-try:
-    __STDC_CONSTANT_MACROS = 1
-except:
-    pass
-
-b_off_t = off_t# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 222
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 245
-def GCC_PREREQ(major, minor):
-    return 0
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 269
-def ICC_PREREQ(version):
-    return 0
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 320
-def UNUSED(parameter):
-    return parameter
-
 # /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 341
 def LIKELY(expression):
     return expression
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 362
-def UNLIKELY(expression):
-    return expression
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 469
-def CPP_STR(x):
-    return x
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 479
-def CPP_XSTR(x):
-    return (CPP_STR (x))
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/defines.h: 50
 try:
@@ -14006,42 +13202,6 @@ try:
 except:
     pass
 
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/magic.h: 55
-try:
-    BU_AVS_MAGIC = 1098273569
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/magic.h: 56
-try:
-    BU_BITV_MAGIC = 1651078262
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/magic.h: 58
-try:
-    BU_EXTERNAL_MAGIC = 1989000144
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/magic.h: 62
-try:
-    BU_HIST_MAGIC = 1214870388
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/magic.h: 68
-try:
-    BU_PTBL_MAGIC = 1886675564
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/magic.h: 74
-try:
-    BU_VLS_MAGIC = 2301836219
-except:
-    pass
-
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/magic.h: 83
 try:
     BN_TOL_MAGIC = 2563191995
@@ -14053,130 +13213,6 @@ try:
     RT_BREP_INTERNAL_MAGIC = 1112687952
 except:
     pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 61
-try:
-    BU_VLS_NULL = cast(0, POINTER(struct_bu_vls))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 89
-def BU_VLS_IS_INITIALIZED(_vp):
-    return ((cast(_vp, POINTER(struct_bu_vls)) != BU_VLS_NULL) and (((_vp.contents.vls_magic).value) == BU_VLS_MAGIC))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 98
-try:
-    BU_AVS_NULL = cast(0, POINTER(struct_bu_attribute_value_set))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 124
-def BU_AVS_IS_INITIALIZED(_ap):
-    return ((cast(_ap, POINTER(struct_bu_attribute_value_set)) != BU_AVS_NULL) and (LIKELY ((((_ap.contents.magic).value) == BU_AVS_MAGIC))))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 136
-try:
-    BU_LIST_NULL = cast(0, POINTER(struct_bu_list))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 147
-def BU_LIST_MAGIC_EQUAL(_l, _magic):
-    return (((_l.contents.magic).value) == _magic)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 188
-def BU_LIST_IS_INITIALIZED(_headp):
-    return ((cast(_headp, POINTER(struct_bu_list)) != BU_LIST_NULL) and (LIKELY ((((_headp.contents.forw).value) != BU_LIST_NULL))))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 308
-def BU_LIST_IS_EMPTY(headp):
-    return (((headp.contents.forw).value) == headp)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 309
-def BU_LIST_NON_EMPTY(headp):
-    return (((headp.contents.forw).value) != headp)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 312
-def BU_LIST_IS_CLEAR(headp):
-    return (((((headp.contents.magic).value) == 0) and (((headp.contents.forw).value) == BU_LIST_NULL)) and (((headp.contents.back).value) == BU_LIST_NULL))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 335
-def BU_LIST_IS_HEAD(p, headp):
-    return (cast(p, POINTER(struct_bu_list)) == cast(headp, POINTER(struct_bu_list)))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 337
-def BU_LIST_NOT_HEAD(p, headp):
-    return (not (BU_LIST_IS_HEAD (p, headp)))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 343
-def BU_LIST_PREV_IS_HEAD(p, headp):
-    return (((cast(p, POINTER(struct_bu_list)).contents.back).value) == cast(headp, POINTER(struct_bu_list)))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 345
-def BU_LIST_PREV_NOT_HEAD(p, headp):
-    return (not (BU_LIST_PREV_IS_HEAD (p, headp)))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 351
-def BU_LIST_NEXT_IS_HEAD(p, headp):
-    return (((cast(p, POINTER(struct_bu_list)).contents.forw).value) == cast(headp, POINTER(struct_bu_list)))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 353
-def BU_LIST_NEXT_NOT_HEAD(p, headp):
-    return (not (BU_LIST_NEXT_IS_HEAD (p, headp)))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 429
-def BU_LIST_FIRST_MAGIC(headp):
-    return ((headp.contents.forw).contents.magic)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 430
-def BU_LIST_LAST_MAGIC(headp):
-    return ((headp.contents.back).contents.magic)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 77
-try:
-    BU_BITV_SHIFT = 3
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 90
-try:
-    BU_BITV_MASK = ((1 << BU_BITV_SHIFT) - 1)
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 114
-try:
-    BU_BITV_NULL = cast(0, POINTER(struct_bu_bitv))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 141
-def BU_BITV_IS_INITIALIZED(_bp):
-    return ((cast(_bp, POINTER(struct_bu_bitv)) != BU_BITV_NULL) and (LIKELY ((((((_bp.contents.l).value).magic).value) == BU_BITV_MAGIC))))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 155
-def BU_WORDS2BITS(_nw):
-    return (((c_size_t (ord_if_char((_nw > 0) and _nw or 0))).value * sizeof(bitv_t)) * 8)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 161
-def BU_BITS2WORDS(_nb):
-    return (((c_size_t (ord_if_char((_nb > 0) and _nb or 0))).value + BU_BITV_MASK) >> BU_BITV_SHIFT)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 167
-def BU_BITS2BYTES(_nb):
-    return ((BU_BITS2WORDS (_nb)) * sizeof(bitv_t))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 171
-def BU_BITTEST(_bv, bit):
-    return (((((_bv.contents.bits).value) [(bit >> BU_BITV_SHIFT)]) & ((bitv_t (ord_if_char(1))).value << (bit & BU_BITV_MASK))) != 0)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 186
-def BU_BITSET(_bv, bit):
-    return (((_bv.contents.bits) [(bit >> BU_BITV_SHIFT)]) | ((bitv_t (ord_if_char(1))).value << (bit & BU_BITV_MASK)))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 188
-def BU_BITCLR(_bv, bit):
-    return (((_bv.contents.bits) [(bit >> BU_BITV_SHIFT)]) & (~((bitv_t (ord_if_char(1))).value << (bit & BU_BITV_MASK))))
 
 # /usr/include/math.h: 62
 try:
@@ -14203,158 +13239,6 @@ def NEAR_ZERO(val, epsilon):
 # /usr/brlcad/dev-7.31.0/include/brlcad/vmath.h: 527
 def NEAR_EQUAL(_a, _b, _tol):
     return (NEAR_ZERO ((_a - _b), _tol))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hist.h: 59
-try:
-    BU_HIST_NULL = cast(0, POINTER(struct_bu_hist))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hist.h: 86
-def BU_HIST_IS_INITIALIZED(_hp):
-    return ((cast(_hp, POINTER(struct_bu_hist)) != BU_HIST_NULL) and (LIKELY ((((_hp.contents.magic).value) == BU_HIST_MAGIC))))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 70
-try:
-    BU_PAGE_SIZE = 4096
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/mapped_file.h: 94
-try:
-    BU_MAPPED_FILE_NULL = cast(0, POINTER(struct_bu_mapped_file))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 80
-def bu_byteoffset(_i):
-    return (c_size_t (ord_if_char((String (ord_if_char(pointer(_i)))).value))).value
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 153
-try:
-    BU_STRUCTPARSE_NULL = cast(0, POINTER(struct_bu_structparse))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 155
-try:
-    BU_STRUCTPARSE_FUNC_NULL = cast(0, POINTER(CFUNCTYPE(UNCHECKED(None), POINTER(struct_bu_structparse), String, POINTER(None), String, POINTER(None))))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 198
-def BU_STRUCTPARSE_IS_INITIALIZED(_sp):
-    return (cast(_sp, POINTER(struct_bu_structparse)) != BU_STRUCTPARSE_NULL)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 221
-try:
-    BU_EXTERNAL_NULL = cast(0, POINTER(struct_bu_external))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 260
-def BU_EXTERNAL_IS_INITIALIZED(_p):
-    return ((cast(_p, POINTER(struct_bu_external)) != BU_EXTERNAL_NULL) and (((_p.contents.ext_magic).value) == BU_EXTERNAL_MAGIC))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 231
-try:
-    BU_LEX_ANY = 0
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 236
-try:
-    BU_LEX_INT = 1
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 241
-try:
-    BU_LEX_DOUBLE = 2
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 246
-try:
-    BU_LEX_SYMBOL = 3
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 247
-try:
-    BU_LEX_KEYWORD = 4
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 252
-try:
-    BU_LEX_IDENT = 5
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 253
-try:
-    BU_LEX_NUMBER = 6
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 265
-try:
-    BU_LEX_NEED_MORE = 0
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 49
-try:
-    MAX_PSW = 1024
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 234
-try:
-    BU_SETJUMP = (setjmp (1))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parallel.h: 235
-try:
-    BU_UNSETJUMP = 0
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 60
-try:
-    BU_PTBL_NULL = cast(0, POINTER(struct_bu_ptbl))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 89
-def BU_PTBL_IS_INITIALIZED(_p):
-    return ((cast(_p, POINTER(struct_bu_ptbl)) != BU_PTBL_NULL) and (LIKELY ((((((_p.contents.l).value).magic).value) == BU_PTBL_MAGIC))))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 97
-def BU_PTBL_GET(ptbl, i):
-    return ((ptbl.contents.buffer) [i])
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 98
-def BU_PTBL_SET(ptbl, i, val):
-    return cast(val, POINTER(c_long))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 101
-def BU_PTBL_END(ptbl):
-    return (ptbl.contents.end)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 114
-def BU_STR_EMPTY(s):
-    return ((bu_strcmp (s, '')) == 0)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 123
-def BU_STR_EQUAL(s1, s2):
-    return ((bu_strcmp (s1, s2)) == 0)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/bu/str.h: 132
-def BU_STR_EQUIV(s1, s2):
-    return ((bu_strcasecmp (s1, s2)) == 0)
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/bn/defines.h: 45
 try:
@@ -14881,6 +13765,88 @@ except:
 # /usr/brlcad/dev-7.31.0/include/brlcad/./rt/defines.h: 186
 try:
     RT_PART_NUBSPT = 0
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 36
+def MKOP(x):
+    return x
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 38
+try:
+    OP_SOLID = (MKOP (1))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 39
+try:
+    OP_UNION = (MKOP (2))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 40
+try:
+    OP_INTERSECT = (MKOP (3))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 41
+try:
+    OP_SUBTRACT = (MKOP (4))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 42
+try:
+    OP_XOR = (MKOP (5))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 43
+try:
+    OP_REGION = (MKOP (6))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 44
+try:
+    OP_NOP = (MKOP (7))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 46
+try:
+    OP_NOT = (MKOP (8))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 47
+try:
+    OP_GUARD = (MKOP (9))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 48
+try:
+    OP_XNOP = (MKOP (10))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 49
+try:
+    OP_NMG_TESS = (MKOP (11))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 51
+try:
+    OP_DB_LEAF = (MKOP (12))
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 52
+try:
+    OP_FREE = (MKOP (13))
 except:
     pass
 
@@ -16093,36 +15059,6 @@ except:
 # /usr/brlcad/dev-7.31.0/include/brlcad/nmg.h: 1072
 try:
     MISS = 0
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 62
-try:
-    PC_DB_FASTF_T = 1
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 63
-try:
-    PC_DB_POINT_T = 2
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 64
-try:
-    PC_DB_VECTOR_T = 3
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 66
-try:
-    PC_DB_BYSTRUCT = 1
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 67
-try:
-    PC_DB_BYEXPR = 2
 except:
     pass
 
@@ -17470,45 +16406,601 @@ except:
 def ATTR_STD(attr):
     return (db5_standard_attribute ((db5_standardize_attribute (attr))))
 
-bu_vls = struct_bu_vls# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 53
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/solid.h: 68
+try:
+    SOLID_NULL = cast(0, POINTER(struct_solid))
+except:
+    pass
 
-bu_attribute_value_pair = struct_bu_attribute_value_pair# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 66
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/solid.h: 86
+def LAST_SOLID(_sp):
+    return (DB_FULL_PATH_CUR_DIR (pointer((_sp.contents.s_fullpath))))
 
-bu_attribute_value_set = struct_bu_attribute_value_set# /usr/brlcad/dev-7.31.0/include/brlcad/bu/avs.h: 89
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/solid.h: 87
+def FIRST_SOLID(_sp):
+    return (((_sp.contents.s_fullpath).fp_names) [0])
 
-bu_list = struct_bu_list# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 130
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 40
+try:
+    DIFF_EMPTY = 0
+except:
+    pass
 
-bu_bitv = struct_bu_bitv# /usr/brlcad/dev-7.31.0/include/brlcad/bu/bitv.h: 108
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 41
+try:
+    DIFF_UNCHANGED = 1
+except:
+    pass
 
-bu_hash_entry = struct_bu_hash_entry# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 46
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 42
+try:
+    DIFF_REMOVED = 2
+except:
+    pass
 
-bu_hash_tbl = struct_bu_hash_tbl# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hash.h: 47
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 43
+try:
+    DIFF_ADDED = 4
+except:
+    pass
 
-bu_hist = struct_bu_hist# /usr/brlcad/dev-7.31.0/include/brlcad/bu/hist.h: 49
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 44
+try:
+    DIFF_CHANGED = 8
+except:
+    pass
 
-bu_pool = struct_bu_pool# /usr/brlcad/dev-7.31.0/include/brlcad/bu/malloc.h: 172
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 45
+try:
+    DIFF_CONFLICT = 16
+except:
+    pass
 
-bu_mapped_file = struct_bu_mapped_file# /usr/brlcad/dev-7.31.0/include/brlcad/bu/mapped_file.h: 81
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 52
+try:
+    TIE_PRECISION = 1
+except:
+    pass
 
-bu_structparse = struct_bu_structparse# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 139
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 55
+try:
+    TIE_CHECK_DEGENERATE = 1
+except:
+    pass
 
-bu_structparse_map = struct_bu_structparse_map# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 161
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 57
+try:
+    TIE_KDTREE_FAST = 0
+except:
+    pass
 
-bu_external = struct_bu_external# /usr/brlcad/dev-7.31.0/include/brlcad/bu/parse.h: 210
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 58
+try:
+    TIE_KDTREE_OPTIMAL = 1
+except:
+    pass
 
-bu_lex_t_int = struct_bu_lex_t_int# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 232
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 73
+try:
+    NAMESIZE = 16
+except:
+    pass
 
-bu_lex_t_dbl = struct_bu_lex_t_dbl# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 237
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 85
+try:
+    DB_MINREC = 128
+except:
+    pass
 
-bu_lex_t_key = struct_bu_lex_t_key# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 242
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 92
+try:
+    ID_NO_UNIT = 0
+except:
+    pass
 
-bu_lex_t_id = struct_bu_lex_t_id# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 248
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 93
+try:
+    ID_MM_UNIT = 1
+except:
+    pass
 
-bu_lex_token = union_bu_lex_token# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 254
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 94
+try:
+    ID_CM_UNIT = 2
+except:
+    pass
 
-bu_lex_key = struct_bu_lex_key# /usr/brlcad/dev-7.31.0/include/brlcad/bu/log.h: 261
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 95
+try:
+    ID_M_UNIT = 3
+except:
+    pass
 
-bu_ptbl = struct_bu_ptbl# /usr/brlcad/dev-7.31.0/include/brlcad/bu/ptbl.h: 53
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 96
+try:
+    ID_IN_UNIT = 4
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 97
+try:
+    ID_FT_UNIT = 5
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 99
+try:
+    ID_UM_UNIT = 6
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 100
+try:
+    ID_KM_UNIT = 7
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 101
+try:
+    ID_YD_UNIT = 8
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 102
+try:
+    ID_MI_UNIT = 9
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 104
+try:
+    ID_VERSION = 'v4'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 108
+try:
+    ID_BY_UNKNOWN = 0
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 109
+try:
+    ID_BY_VAX = 1
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 110
+try:
+    ED_BY_IBM = 2
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 112
+try:
+    ID_FT_UNKNOWN = 0
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 113
+try:
+    ID_FT_VAX = 1
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 114
+try:
+    ID_FT_IBM = 2
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 115
+try:
+    ID_FT_IEEE = 3
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 116
+try:
+    ID_FT_CRAY = 4
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 122
+try:
+    RPP = 1
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 123
+try:
+    BOX = 2
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 124
+try:
+    RAW = 3
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 125
+try:
+    ARB4 = 4
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 126
+try:
+    ARB5 = 5
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 127
+try:
+    ARB6 = 6
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 128
+try:
+    ARB7 = 7
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 129
+try:
+    ARB8 = 8
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 130
+try:
+    ELL = 9
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 131
+try:
+    ELL1 = 10
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 132
+try:
+    SPH = 11
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 133
+try:
+    RCC = 12
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 134
+try:
+    REC = 13
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 135
+try:
+    TRC = 14
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 136
+try:
+    TEC = 15
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 137
+try:
+    TOR = 16
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 138
+try:
+    TGC = 17
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 139
+try:
+    GENTGC = 18
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 140
+try:
+    GENELL = 19
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 141
+try:
+    GENARB8 = 20
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 142
+try:
+    ARS = 21
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 143
+try:
+    ARSCONT = 22
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 144
+try:
+    ELLG = 23
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 145
+try:
+    HALFSPACE = 24
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 146
+try:
+    SPLINE = 25
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 147
+try:
+    RPC = 26
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 148
+try:
+    RHC = 27
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 149
+try:
+    EPA = 28
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 150
+try:
+    EHY = 29
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 151
+try:
+    ETO = 30
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 152
+try:
+    GRP = 31
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 153
+try:
+    SUPERELL = 32
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 154
+try:
+    HYP = 33
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 197
+try:
+    DBV4_NON_REGION = b' '
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 198
+try:
+    DBV4_NON_REGION_NULL = b'\\0'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 199
+try:
+    DBV4_REGION = b'R'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 200
+try:
+    DBV4_REGION_FASTGEN_PLATE = b'P'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 201
+try:
+    DBV4_REGION_FASTGEN_VOLUME = b'V'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 214
+try:
+    DB_INH_LOWER = 0
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 215
+try:
+    DB_INH_HIGHER = 1
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 302
+try:
+    DB_SS_NGRAN = 8
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 303
+try:
+    DB_SS_LEN = (((DB_SS_NGRAN * DB_MINREC) - (2 * NAMESIZE)) - 2)
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 424
+try:
+    ID_IDENT = b'I'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 425
+try:
+    ID_SOLID = b'S'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 426
+try:
+    ID_COMB = b'C'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 427
+try:
+    ID_MEMB = b'M'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 428
+try:
+    ID_ARS_A = b'A'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 429
+try:
+    ID_ARS_B = b'B'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 430
+try:
+    ID_FREE = b'F'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 431
+try:
+    ID_P_HEAD = b'P'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 432
+try:
+    ID_P_DATA = b'Q'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 433
+try:
+    ID_BSOLID = b'b'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 434
+try:
+    ID_BSURF = b'D'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 435
+try:
+    ID_MATERIAL = b'm'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 436
+try:
+    DBID_STRSOL = b's'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 437
+try:
+    DBID_ARBN = b'n'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 438
+try:
+    DBID_PIPE = b'w'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 439
+try:
+    DBID_PARTICLE = b'p'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 440
+try:
+    DBID_NMG = b'N'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 441
+try:
+    DBID_SKETCH = b'd'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 442
+try:
+    DBID_ANNOT = b'a'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 443
+try:
+    DBID_EXTR = b'e'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 444
+try:
+    DBID_CLINE = b'c'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 445
+try:
+    DBID_BOT = b't'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 446
+try:
+    DBID_SCRIPT = b'T'
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 501
+try:
+    DB_RECORD_NULL = cast(0, POINTER(union_record))
+except:
+    pass
 
 bn_tol = struct_bn_tol# /usr/brlcad/dev-7.31.0/include/brlcad/bn/tol.h: 72
 
@@ -17595,14 +17087,6 @@ nmg_hitmiss = struct_nmg_hitmiss# /usr/brlcad/dev-7.31.0/include/brlcad/nmg.h: 1
 nmg_ray_data = struct_nmg_ray_data# /usr/brlcad/dev-7.31.0/include/brlcad/nmg.h: 1138
 
 nmg_curvature = struct_nmg_curvature# /usr/brlcad/dev-7.31.0/include/brlcad/nmg.h: 2659
-
-pc_param = struct_pc_param# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 74
-
-pc_constraint_fp = struct_pc_constraint_fp# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 88
-
-pc_constrnt = struct_pc_constrnt# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 94
-
-pc_pc_set = struct_pc_pc_set# /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 105
 
 _on_brep_placeholder = struct__on_brep_placeholder# /usr/brlcad/dev-7.31.0/include/brlcad/brep/defines.h: 85
 
@@ -17850,7 +17334,7 @@ command_tab = struct_command_tab# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/cmd
 
 db_search_context = struct_db_search_context# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/search.h: 45
 
-record = union_record# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/db_io.h: 474
+record = union_record# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 421
 
 bot_specific = struct_bot_specific# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/primitives/bot.h: 57
 
@@ -17862,8 +17346,73 @@ db5_attr_ctype = struct_db5_attr_ctype# /usr/brlcad/dev-7.31.0/include/brlcad/./
 
 db5_registry = struct_db5_registry# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/db_attr.h: 86
 
+solid = struct_solid# /usr/brlcad/dev-7.31.0/include/brlcad/rt/solid.h: 38
+
+diff_avp = struct_diff_avp# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 51
+
+diff_result = struct_diff_result# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 60
+
+TIE_3_s = struct_TIE_3_s# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 78
+
+tie_ray_s = struct_tie_ray_s# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 80
+
+tie_id_s = struct_tie_id_s# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 87
+
+tie_tri_s = struct_tie_tri_s# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 95
+
+tie_kdtree_s = struct_tie_kdtree_s# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 107
+
+tie_s = struct_tie_s# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tie.h: 114
+
+ident = struct_ident# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 88
+
+solidrec = struct_solidrec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 119
+
+combination = struct_combination# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 194
+
+member = struct_member# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 218
+
+material_rec = struct_material_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 228
+
+B_solid = struct_B_solid# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 239
+
+b_surf = struct_b_surf# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 247
+
+polyhead = struct_polyhead# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 257
+
+polydata = struct_polydata# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 263
+
+ars_rec = struct_ars_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 270
+
+ars_ext = struct_ars_ext# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 289
+
+strsol = struct_strsol# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 298
+
+arbn_rec = struct_arbn_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 308
+
+exported_pipe_pnt = struct_exported_pipe_pnt# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 317
+
+pipewire_rec = struct_pipewire_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 324
+
+particle_rec = struct_particle_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 333
+
+nmg_rec = struct_nmg_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 343
+
+extr_rec = struct_extr_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 352
+
+sketch_rec = struct_sketch_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 365
+
+annot_rec = struct_annot_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 377
+
+script_rec = struct_script_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 387
+
+cline_rec = struct_cline_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 393
+
+bot_rec = struct_bot_rec# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db4.h: 403
+
 tree_list = struct_tree_list# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tree.h: 233
 
 # No inserted files
 
 # No prefix-stripping
+

@@ -6,3 +6,8 @@ test*
 raytrace_macros.py
 geometry.g
 usage.txt
+options.txt
+python-brlcad.bak.cfg
+random*
+brlcad_*
+brlcad/bindings.bak

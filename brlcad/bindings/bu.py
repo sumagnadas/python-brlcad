@@ -814,20 +814,16 @@ add_library_search_dirs([])
 _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"] = load_library("/usr/brlcad/dev-7.31.0/lib/librt.so")
 _libs["/usr/brlcad/dev-7.31.0/lib/libbn.so"] = load_library("/usr/brlcad/dev-7.31.0/lib/libbn.so")
 _libs["/usr/brlcad/dev-7.31.0/lib/libbu.so"] = load_library("/usr/brlcad/dev-7.31.0/lib/libbu.so")
-_libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"] = load_library("/usr/brlcad/dev-7.31.0/lib/libwdb.so")
 
-# 4 libraries
+# 3 libraries
 # End libraries
 
 # Begin modules
 from .bu import *
 from .bn import *
 from .bu import *
-from .bu import *
-from .bn import *
-from raytrace import *
 
-# 6 modules
+# 3 modules
 # End modules
 
 __off_t = c_long# /usr/include/x86_64-linux-gnu/bits/types.h: 152
@@ -2429,7 +2425,7 @@ struct_bg_tess_tol._fields_ = [
     ('rel_lmin', c_double),
 ]
 
-enum_anon_243 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
+enum_anon_163 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
 
 DB_OP_NULL = 0# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
 
@@ -2439,7 +2435,7 @@ DB_OP_SUBTRACT = b'-'# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
 
 DB_OP_INTERSECT = b'+'# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
 
-db_op_t = enum_anon_243# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
+db_op_t = enum_anon_163# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 60
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/./rt/op.h: 72
 if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("db_str2op", "cdecl"):
@@ -2656,15 +2652,15 @@ class struct_face_g_snurb(Structure):
     pass
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/nmg.h: 278
-class union_anon_244(Union):
+class union_anon_164(Union):
     pass
 
-union_anon_244.__slots__ = [
+union_anon_164.__slots__ = [
     'magic_p',
     'plane_p',
     'snurb_p',
 ]
-union_anon_244._fields_ = [
+union_anon_164._fields_ = [
     ('magic_p', POINTER(c_uint32)),
     ('plane_p', POINTER(struct_face_g_plane)),
     ('snurb_p', POINTER(struct_face_g_snurb)),
@@ -2686,7 +2682,7 @@ struct_face.__slots__ = [
 struct_face._fields_ = [
     ('l', struct_bu_list),
     ('fu_p', POINTER(struct_faceuse)),
-    ('g', union_anon_244),
+    ('g', union_anon_164),
     ('flip', c_int),
     ('min_pt', point_t),
     ('max_pt', point_t),
@@ -2795,15 +2791,15 @@ struct_loop_g._fields_ = [
 ]
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/nmg.h: 401
-class union_anon_245(Union):
+class union_anon_165(Union):
     pass
 
-union_anon_245.__slots__ = [
+union_anon_165.__slots__ = [
     'fu_p',
     's_p',
     'magic_p',
 ]
-union_anon_245._fields_ = [
+union_anon_165._fields_ = [
     ('fu_p', POINTER(struct_faceuse)),
     ('s_p', POINTER(struct_shell)),
     ('magic_p', POINTER(c_uint32)),
@@ -2820,7 +2816,7 @@ struct_loopuse.__slots__ = [
 ]
 struct_loopuse._fields_ = [
     ('l', struct_bu_list),
-    ('up', union_anon_245),
+    ('up', union_anon_165),
     ('lumate_p', POINTER(struct_loopuse)),
     ('orientation', c_int),
     ('l_p', POINTER(struct_loop)),
@@ -2894,30 +2890,30 @@ struct_edge_g_cnurb._fields_ = [
 ]
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/nmg.h: 474
-class union_anon_246(Union):
+class union_anon_166(Union):
     pass
 
-union_anon_246.__slots__ = [
+union_anon_166.__slots__ = [
     'lu_p',
     's_p',
     'magic_p',
 ]
-union_anon_246._fields_ = [
+union_anon_166._fields_ = [
     ('lu_p', POINTER(struct_loopuse)),
     ('s_p', POINTER(struct_shell)),
     ('magic_p', POINTER(c_uint32)),
 ]
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/nmg.h: 484
-class union_anon_247(Union):
+class union_anon_167(Union):
     pass
 
-union_anon_247.__slots__ = [
+union_anon_167.__slots__ = [
     'magic_p',
     'lseg_p',
     'cnurb_p',
 ]
-union_anon_247._fields_ = [
+union_anon_167._fields_ = [
     ('magic_p', POINTER(c_uint32)),
     ('lseg_p', POINTER(struct_edge_g_lseg)),
     ('cnurb_p', POINTER(struct_edge_g_cnurb)),
@@ -2938,13 +2934,13 @@ struct_edgeuse.__slots__ = [
 struct_edgeuse._fields_ = [
     ('l', struct_bu_list),
     ('l2', struct_bu_list),
-    ('up', union_anon_246),
+    ('up', union_anon_166),
     ('eumate_p', POINTER(struct_edgeuse)),
     ('radial_p', POINTER(struct_edgeuse)),
     ('e_p', POINTER(struct_edge)),
     ('orientation', c_int),
     ('vu_p', POINTER(struct_vertexuse)),
-    ('g', union_anon_247),
+    ('g', union_anon_167),
     ('index', c_long),
 ]
 
@@ -2981,16 +2977,16 @@ struct_vertex_g._fields_ = [
 ]
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/nmg.h: 514
-class union_anon_248(Union):
+class union_anon_168(Union):
     pass
 
-union_anon_248.__slots__ = [
+union_anon_168.__slots__ = [
     's_p',
     'lu_p',
     'eu_p',
     'magic_p',
 ]
-union_anon_248._fields_ = [
+union_anon_168._fields_ = [
     ('s_p', POINTER(struct_shell)),
     ('lu_p', POINTER(struct_loopuse)),
     ('eu_p', POINTER(struct_edgeuse)),
@@ -3006,15 +3002,15 @@ class struct_vertexuse_a_cnurb(Structure):
     pass
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/nmg.h: 521
-class union_anon_249(Union):
+class union_anon_169(Union):
     pass
 
-union_anon_249.__slots__ = [
+union_anon_169.__slots__ = [
     'magic_p',
     'plane_p',
     'cnurb_p',
 ]
-union_anon_249._fields_ = [
+union_anon_169._fields_ = [
     ('magic_p', POINTER(c_uint32)),
     ('plane_p', POINTER(struct_vertexuse_a_plane)),
     ('cnurb_p', POINTER(struct_vertexuse_a_cnurb)),
@@ -3029,9 +3025,9 @@ struct_vertexuse.__slots__ = [
 ]
 struct_vertexuse._fields_ = [
     ('l', struct_bu_list),
-    ('up', union_anon_248),
+    ('up', union_anon_168),
     ('v_p', POINTER(struct_vertex)),
-    ('a', union_anon_249),
+    ('a', union_anon_169),
     ('index', c_long),
 ]
 
@@ -6935,14 +6931,14 @@ if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("rt_cnurb_par_edge", "cdecl"
     rt_cnurb_par_edge.restype = fastf_t
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 82
-class union_anon_250(Union):
+class union_anon_170(Union):
     pass
 
-union_anon_250.__slots__ = [
+union_anon_170.__slots__ = [
     'expression',
     'ptr',
 ]
-union_anon_250._fields_ = [
+union_anon_170._fields_ = [
     ('expression', struct_bu_vls),
     ('ptr', POINTER(None)),
 ]
@@ -6963,7 +6959,7 @@ struct_pc_param._fields_ = [
     ('name', struct_bu_vls),
     ('ctype', c_int),
     ('dtype', c_int),
-    ('data', union_anon_250),
+    ('data', union_anon_170),
 ]
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 88
@@ -6982,14 +6978,14 @@ struct_pc_constraint_fp._fields_ = [
 ]
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/pc.h: 98
-class union_anon_251(Union):
+class union_anon_171(Union):
     pass
 
-union_anon_251.__slots__ = [
+union_anon_171.__slots__ = [
     'expression',
     'cf',
 ]
-union_anon_251._fields_ = [
+union_anon_171._fields_ = [
     ('expression', struct_bu_vls),
     ('cf', struct_pc_constraint_fp),
 ]
@@ -7009,7 +7005,7 @@ struct_pc_constrnt._fields_ = [
     ('l', struct_bu_list),
     ('name', struct_bu_vls),
     ('ctype', c_int),
-    ('data', union_anon_251),
+    ('data', union_anon_171),
     ('args', POINTER(POINTER(c_char))),
 ]
 
@@ -7916,7 +7912,7 @@ struct_rt_bot_list._fields_ = [
     ('bot', POINTER(struct_rt_bot_internal)),
 ]
 
-enum_anon_270 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/geom.h: 899
+enum_anon_190 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/geom.h: 899
 
 RT_PNT_TYPE_PNT = 0# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/geom.h: 899
 
@@ -7936,7 +7932,7 @@ RT_PNT_TYPE_COL_SCA_NRM = (((0 + 1) + 2) + 4)# /usr/brlcad/dev-7.31.0/include/br
 
 RT_PNT_UNKNOWN = 8# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/geom.h: 899
 
-rt_pnt_type = enum_anon_270# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/geom.h: 899
+rt_pnt_type = enum_anon_190# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/geom.h: 899
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/./rt/geom.h: 901
 class struct_pnt(Structure):
@@ -8623,14 +8619,14 @@ if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("db_apply_anims", "cdecl"):
     db_apply_anims.restype = None
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/rt/directory.h: 62
-class union_anon_271(Union):
+class union_anon_191(Union):
     pass
 
-union_anon_271.__slots__ = [
+union_anon_191.__slots__ = [
     'file_offset',
     'ptr',
 ]
-union_anon_271._fields_ = [
+union_anon_191._fields_ = [
     ('file_offset', off_t),
     ('ptr', POINTER(None)),
 ]
@@ -8654,7 +8650,7 @@ struct_directory.__slots__ = [
 struct_directory._fields_ = [
     ('d_magic', c_uint32),
     ('d_namep', String),
-    ('d_un', union_anon_271),
+    ('d_un', union_anon_191),
     ('d_forw', POINTER(struct_directory)),
     ('d_animate', POINTER(struct_animate)),
     ('d_uses', c_long),
@@ -10229,10 +10225,10 @@ struct_rt_comb_internal._fields_ = [
 ]
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/./rt/nongeom.h: 107
-class union_anon_272(Union):
+class union_anon_192(Union):
     pass
 
-union_anon_272.__slots__ = [
+union_anon_192.__slots__ = [
     'flt',
     'dbl',
     'int8',
@@ -10244,7 +10240,7 @@ union_anon_272.__slots__ = [
     'uint32',
     'uint64',
 ]
-union_anon_272._fields_ = [
+union_anon_192._fields_ = [
     ('flt', POINTER(c_float)),
     ('dbl', POINTER(c_double)),
     ('int8', String),
@@ -10271,7 +10267,7 @@ struct_rt_binunif_internal._fields_ = [
     ('magic', c_uint32),
     ('type', c_int),
     ('count', c_size_t),
-    ('u', union_anon_272),
+    ('u', union_anon_192),
 ]
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/./rt/nongeom.h: 127
@@ -10822,13 +10818,13 @@ struct_rt_selection_translation._fields_ = [
 ]
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/./rt/view.h: 148
-class union_anon_273(Union):
+class union_anon_193(Union):
     pass
 
-union_anon_273.__slots__ = [
+union_anon_193.__slots__ = [
     'tran',
 ]
-union_anon_273._fields_ = [
+union_anon_193._fields_ = [
     ('tran', struct_rt_selection_translation),
 ]
 
@@ -10842,7 +10838,7 @@ struct_rt_selection_operation.__slots__ = [
 ]
 struct_rt_selection_operation._fields_ = [
     ('type', c_int),
-    ('parameters', union_anon_273),
+    ('parameters', union_anon_193),
 ]
 
 struct_rt_functab.__slots__ = [
@@ -11215,7 +11211,7 @@ if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("rt_raybundle_maker", "cdecl
     rt_raybundle_maker.argtypes = [POINTER(struct_xray), c_double, POINTER(fastf_t), POINTER(fastf_t), c_int, c_int]
     rt_raybundle_maker.restype = c_int
 
-enum_anon_274 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/pattern.h: 61
+enum_anon_194 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/pattern.h: 61
 
 RT_PATTERN_RECT_ORTHOGRID = 0# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/pattern.h: 61
 
@@ -11239,7 +11235,7 @@ RT_PATTERN_SPH_QRAND = (RT_PATTERN_SPH_LAYERS + 1)# /usr/brlcad/dev-7.31.0/inclu
 
 RT_PATTERN_UNKNOWN = (RT_PATTERN_SPH_QRAND + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/pattern.h: 61
 
-rt_pattern_t = enum_anon_274# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/pattern.h: 61
+rt_pattern_t = enum_anon_194# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/pattern.h: 61
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/./rt/pattern.h: 68
 class struct_rt_pattern_data(Structure):
@@ -12766,7 +12762,7 @@ if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("rt_dspline_n", "cdecl"):
     rt_dspline_n.argtypes = [POINTER(c_double), mat_t, POINTER(c_double), c_int, c_int, c_double]
     rt_dspline_n.restype = None
 
-enum_anon_275 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/db_attr.h: 44
+enum_anon_195 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/db_attr.h: 44
 
 ATTR_REGION = 0# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/db_attr.h: 44
 
@@ -12788,7 +12784,7 @@ ATTR_TIMESTAMP = (ATTR_INHERIT + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/
 
 ATTR_NULL = (ATTR_TIMESTAMP + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/db_attr.h: 44
 
-enum_anon_276 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/db_attr.h: 58
+enum_anon_196 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/db_attr.h: 58
 
 ATTR_STANDARD = 0# /usr/brlcad/dev-7.31.0/include/brlcad/./rt/db_attr.h: 58
 
@@ -13130,7 +13126,7 @@ if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("diff_free_result", "cdecl")
     diff_free_result.argtypes = [POINTER(struct_diff_result)]
     diff_free_result.restype = None
 
-enum_anon_277 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
+enum_anon_197 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
 
 DB_COMPARE_ALL = 0# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
 
@@ -13138,7 +13134,7 @@ DB_COMPARE_PARAM = 1# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
 
 DB_COMPARE_ATTRS = 2# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
 
-db_compare_criteria_t = enum_anon_277# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
+db_compare_criteria_t = enum_anon_197# /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 84
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/rt/db_diff.h: 92
 if _libs["/usr/brlcad/dev-7.31.0/lib/librt.so"].has("db_avs_diff", "cdecl"):
@@ -14094,497 +14090,6 @@ try:
     bu_debug = (c_uint).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/librt.so"], "bu_debug")
 except:
     pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 77
-class struct_wmember(Structure):
-    pass
-
-struct_wmember.__slots__ = [
-    'l',
-    'wm_op',
-    'wm_mat',
-    'wm_name',
-]
-struct_wmember._fields_ = [
-    ('l', struct_bu_list),
-    ('wm_op', c_int),
-    ('wm_mat', mat_t),
-    ('wm_name', String),
-]
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 93
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_id", "cdecl"):
-    mk_id = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_id", "cdecl")
-    mk_id.argtypes = [POINTER(struct_rt_wdb), String]
-    mk_id.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 101
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_id_units", "cdecl"):
-    mk_id_units = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_id_units", "cdecl")
-    mk_id_units.argtypes = [POINTER(struct_rt_wdb), String, String]
-    mk_id_units.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 120
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_id_editunits", "cdecl"):
-    mk_id_editunits = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_id_editunits", "cdecl")
-    mk_id_editunits.argtypes = [POINTER(struct_rt_wdb), String, c_double]
-    mk_id_editunits.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 129
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_half", "cdecl"):
-    mk_half = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_half", "cdecl")
-    mk_half.argtypes = [POINTER(struct_rt_wdb), String, vect_t, fastf_t]
-    mk_half.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 135
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_grip", "cdecl"):
-    mk_grip = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_grip", "cdecl")
-    mk_grip.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, fastf_t]
-    mk_grip.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 145
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_rpp", "cdecl"):
-    mk_rpp = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_rpp", "cdecl")
-    mk_rpp.argtypes = [POINTER(struct_rt_wdb), String, point_t, point_t]
-    mk_rpp.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 153
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_wedge", "cdecl"):
-    mk_wedge = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_wedge", "cdecl")
-    mk_wedge.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, vect_t, fastf_t, fastf_t, fastf_t, fastf_t]
-    mk_wedge.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 158
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_arb4", "cdecl"):
-    mk_arb4 = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_arb4", "cdecl")
-    mk_arb4.argtypes = [POINTER(struct_rt_wdb), String, POINTER(fastf_t)]
-    mk_arb4.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 160
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_arb5", "cdecl"):
-    mk_arb5 = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_arb5", "cdecl")
-    mk_arb5.argtypes = [POINTER(struct_rt_wdb), String, POINTER(fastf_t)]
-    mk_arb5.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 162
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_arb6", "cdecl"):
-    mk_arb6 = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_arb6", "cdecl")
-    mk_arb6.argtypes = [POINTER(struct_rt_wdb), String, POINTER(fastf_t)]
-    mk_arb6.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 164
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_arb7", "cdecl"):
-    mk_arb7 = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_arb7", "cdecl")
-    mk_arb7.argtypes = [POINTER(struct_rt_wdb), String, POINTER(fastf_t)]
-    mk_arb7.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 174
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_arb8", "cdecl"):
-    mk_arb8 = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_arb8", "cdecl")
-    mk_arb8.argtypes = [POINTER(struct_rt_wdb), String, POINTER(fastf_t)]
-    mk_arb8.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 179
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_sph", "cdecl"):
-    mk_sph = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_sph", "cdecl")
-    mk_sph.argtypes = [POINTER(struct_rt_wdb), String, point_t, fastf_t]
-    mk_sph.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 187
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_ell", "cdecl"):
-    mk_ell = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_ell", "cdecl")
-    mk_ell.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, vect_t, vect_t]
-    mk_ell.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 194
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_tor", "cdecl"):
-    mk_tor = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_tor", "cdecl")
-    mk_tor.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, c_double, c_double]
-    mk_tor.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 200
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_rcc", "cdecl"):
-    mk_rcc = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_rcc", "cdecl")
-    mk_rcc.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, fastf_t]
-    mk_rcc.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 206
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_tgc", "cdecl"):
-    mk_tgc = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_tgc", "cdecl")
-    mk_tgc.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, vect_t, vect_t, vect_t, vect_t]
-    mk_tgc.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 215
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_cone", "cdecl"):
-    mk_cone = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_cone", "cdecl")
-    mk_cone.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, fastf_t, fastf_t, fastf_t]
-    mk_cone.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 222
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_trc_h", "cdecl"):
-    mk_trc_h = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_trc_h", "cdecl")
-    mk_trc_h.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, fastf_t, fastf_t]
-    mk_trc_h.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 228
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_trc_top", "cdecl"):
-    mk_trc_top = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_trc_top", "cdecl")
-    mk_trc_top.argtypes = [POINTER(struct_rt_wdb), String, point_t, point_t, fastf_t, fastf_t]
-    mk_trc_top.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 236
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_rpc", "cdecl"):
-    mk_rpc = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_rpc", "cdecl")
-    mk_rpc.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, vect_t, c_double]
-    mk_rpc.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 251
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_rhc", "cdecl"):
-    mk_rhc = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_rhc", "cdecl")
-    mk_rhc.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, vect_t, fastf_t, fastf_t]
-    mk_rhc.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 265
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_epa", "cdecl"):
-    mk_epa = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_epa", "cdecl")
-    mk_epa.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, vect_t, fastf_t, fastf_t]
-    mk_epa.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 281
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_ehy", "cdecl"):
-    mk_ehy = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_ehy", "cdecl")
-    mk_ehy.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, vect_t, fastf_t, fastf_t, fastf_t]
-    mk_ehy.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 296
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_hyp", "cdecl"):
-    mk_hyp = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_hyp", "cdecl")
-    mk_hyp.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, vect_t, fastf_t, fastf_t]
-    mk_hyp.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 312
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_eto", "cdecl"):
-    mk_eto = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_eto", "cdecl")
-    mk_eto.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, vect_t, fastf_t, fastf_t]
-    mk_eto.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 325
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_metaball", "cdecl"):
-    mk_metaball = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_metaball", "cdecl")
-    mk_metaball.argtypes = [POINTER(struct_rt_wdb), String, c_size_t, c_int, fastf_t, POINTER(fastf_t) * int(5)]
-    mk_metaball.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 338
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_arbn", "cdecl"):
-    mk_arbn = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_arbn", "cdecl")
-    mk_arbn.argtypes = [POINTER(struct_rt_wdb), String, c_size_t, POINTER(plane_t)]
-    mk_arbn.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 340
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_ars", "cdecl"):
-    mk_ars = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_ars", "cdecl")
-    mk_ars.argtypes = [POINTER(struct_rt_wdb), String, c_size_t, c_size_t, POINTER(POINTER(fastf_t))]
-    mk_ars.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 347
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_constraint", "cdecl"):
-    mk_constraint = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_constraint", "cdecl")
-    mk_constraint.argtypes = [POINTER(struct_rt_wdb), String, String]
-    mk_constraint.restype = c_int
-
-enum_anon_292 = c_int# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FLOAT = 0# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_DOUBLE = (WDB_BINUNIF_FLOAT + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_CHAR = (WDB_BINUNIF_DOUBLE + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_UCHAR = (WDB_BINUNIF_CHAR + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_SHORT = (WDB_BINUNIF_UCHAR + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_USHORT = (WDB_BINUNIF_SHORT + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_INT = (WDB_BINUNIF_USHORT + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_UINT = (WDB_BINUNIF_INT + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_LONG = (WDB_BINUNIF_UINT + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_ULONG = (WDB_BINUNIF_LONG + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_LONGLONG = (WDB_BINUNIF_ULONG + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_ULONGLONG = (WDB_BINUNIF_LONGLONG + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_INT8 = (WDB_BINUNIF_ULONGLONG + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_UINT8 = (WDB_BINUNIF_INT8 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_INT16 = (WDB_BINUNIF_UINT8 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_UINT16 = (WDB_BINUNIF_INT16 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_INT32 = (WDB_BINUNIF_UINT16 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_UINT32 = (WDB_BINUNIF_INT32 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_INT64 = (WDB_BINUNIF_UINT32 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_UINT64 = (WDB_BINUNIF_INT64 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_FLOAT = (WDB_BINUNIF_UINT64 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_DOUBLE = (WDB_BINUNIF_FILE_FLOAT + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_CHAR = (WDB_BINUNIF_FILE_DOUBLE + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_UCHAR = (WDB_BINUNIF_FILE_CHAR + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_SHORT = (WDB_BINUNIF_FILE_UCHAR + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_USHORT = (WDB_BINUNIF_FILE_SHORT + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_INT = (WDB_BINUNIF_FILE_USHORT + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_UINT = (WDB_BINUNIF_FILE_INT + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_LONG = (WDB_BINUNIF_FILE_UINT + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_ULONG = (WDB_BINUNIF_FILE_LONG + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_LONGLONG = (WDB_BINUNIF_FILE_ULONG + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_ULONGLONG = (WDB_BINUNIF_FILE_LONGLONG + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_INT8 = (WDB_BINUNIF_FILE_ULONGLONG + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_UINT8 = (WDB_BINUNIF_FILE_INT8 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_INT16 = (WDB_BINUNIF_FILE_UINT8 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_UINT16 = (WDB_BINUNIF_FILE_INT16 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_INT32 = (WDB_BINUNIF_FILE_UINT16 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_UINT32 = (WDB_BINUNIF_FILE_INT32 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_INT64 = (WDB_BINUNIF_FILE_UINT32 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-WDB_BINUNIF_FILE_UINT64 = (WDB_BINUNIF_FILE_INT64 + 1)# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-wdb_binunif = enum_anon_292# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 395
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 409
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_binunif", "cdecl"):
-    mk_binunif = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_binunif", "cdecl")
-    mk_binunif.argtypes = [POINTER(struct_rt_wdb), String, POINTER(None), wdb_binunif, c_long]
-    mk_binunif.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 415
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_bot", "cdecl"):
-    mk_bot = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_bot", "cdecl")
-    mk_bot.argtypes = [POINTER(struct_rt_wdb), String, c_ubyte, c_ubyte, c_ubyte, c_size_t, c_size_t, POINTER(fastf_t), POINTER(c_int), POINTER(fastf_t), POINTER(struct_bu_bitv)]
-    mk_bot.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 442
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_bot_w_normals", "cdecl"):
-    mk_bot_w_normals = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_bot_w_normals", "cdecl")
-    mk_bot_w_normals.argtypes = [POINTER(struct_rt_wdb), String, c_ubyte, c_ubyte, c_ubyte, c_size_t, c_size_t, POINTER(fastf_t), POINTER(c_int), POINTER(fastf_t), POINTER(struct_bu_bitv), c_size_t, POINTER(fastf_t), POINTER(c_int)]
-    mk_bot_w_normals.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 475
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_bot_w_normals_and_uvs", "cdecl"):
-    mk_bot_w_normals_and_uvs = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_bot_w_normals_and_uvs", "cdecl")
-    mk_bot_w_normals_and_uvs.argtypes = [POINTER(struct_rt_wdb), String, c_ubyte, c_ubyte, c_ubyte, c_size_t, c_size_t, POINTER(fastf_t), POINTER(c_int), POINTER(fastf_t), POINTER(struct_bu_bitv), c_size_t, POINTER(fastf_t), POINTER(c_int), c_size_t, POINTER(fastf_t), POINTER(c_int)]
-    mk_bot_w_normals_and_uvs.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 514
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_brep", "cdecl"):
-    mk_brep = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_brep", "cdecl")
-    mk_brep.argtypes = [POINTER(struct_rt_wdb), String, POINTER(None)]
-    mk_brep.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 523
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_bspline", "cdecl"):
-    mk_bspline = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_bspline", "cdecl")
-    mk_bspline.argtypes = [POINTER(struct_rt_wdb), String, POINTER(POINTER(struct_face_g_snurb))]
-    mk_bspline.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 530
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_nmg", "cdecl"):
-    mk_nmg = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_nmg", "cdecl")
-    mk_nmg.argtypes = [POINTER(struct_rt_wdb), String, POINTER(struct_model)]
-    mk_nmg.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 538
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_bot_from_nmg", "cdecl"):
-    mk_bot_from_nmg = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_bot_from_nmg", "cdecl")
-    mk_bot_from_nmg.argtypes = [POINTER(struct_rt_wdb), String, POINTER(struct_shell)]
-    mk_bot_from_nmg.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 544
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_sketch", "cdecl"):
-    mk_sketch = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_sketch", "cdecl")
-    mk_sketch.argtypes = [POINTER(struct_rt_wdb), String, POINTER(struct_rt_sketch_internal)]
-    mk_sketch.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 552
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_annot", "cdecl"):
-    mk_annot = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_annot", "cdecl")
-    mk_annot.argtypes = [POINTER(struct_rt_wdb), String, POINTER(struct_rt_annot_internal)]
-    mk_annot.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 560
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_script", "cdecl"):
-    mk_script = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_script", "cdecl")
-    mk_script.argtypes = [POINTER(struct_rt_wdb), String, POINTER(struct_rt_script_internal)]
-    mk_script.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 568
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_extrusion", "cdecl"):
-    mk_extrusion = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_extrusion", "cdecl")
-    mk_extrusion.argtypes = [POINTER(struct_rt_wdb), String, String, point_t, vect_t, vect_t, vect_t, c_int]
-    mk_extrusion.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 584
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_cline", "cdecl"):
-    mk_cline = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_cline", "cdecl")
-    mk_cline.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, fastf_t, fastf_t]
-    mk_cline.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 597
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_particle", "cdecl"):
-    mk_particle = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_particle", "cdecl")
-    mk_particle.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, c_double, c_double]
-    mk_particle.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 608
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_pipe", "cdecl"):
-    mk_pipe = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_pipe", "cdecl")
-    mk_pipe.argtypes = [POINTER(struct_rt_wdb), String, POINTER(struct_bu_list)]
-    mk_pipe.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 614
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_pipe_free", "cdecl"):
-    mk_pipe_free = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_pipe_free", "cdecl")
-    mk_pipe_free.argtypes = [POINTER(struct_bu_list)]
-    mk_pipe_free.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 619
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_add_pipe_pnt", "cdecl"):
-    mk_add_pipe_pnt = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_add_pipe_pnt", "cdecl")
-    mk_add_pipe_pnt.argtypes = [POINTER(struct_bu_list), point_t, c_double, c_double, c_double]
-    mk_add_pipe_pnt.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 629
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_pipe_init", "cdecl"):
-    mk_pipe_init = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_pipe_init", "cdecl")
-    mk_pipe_init.argtypes = [POINTER(struct_bu_list)]
-    mk_pipe_init.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 635
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_dsp", "cdecl"):
-    mk_dsp = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_dsp", "cdecl")
-    mk_dsp.argtypes = [POINTER(struct_rt_wdb), String, String, c_size_t, c_size_t, matp_t]
-    mk_dsp.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 641
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_ebm", "cdecl"):
-    mk_ebm = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_ebm", "cdecl")
-    mk_ebm.argtypes = [POINTER(struct_rt_wdb), String, String, c_size_t, c_size_t, fastf_t, matp_t]
-    mk_ebm.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 647
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_hrt", "cdecl"):
-    mk_hrt = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_hrt", "cdecl")
-    mk_hrt.argtypes = [POINTER(struct_rt_wdb), String, point_t, vect_t, vect_t, vect_t, fastf_t]
-    mk_hrt.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 653
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_vol", "cdecl"):
-    mk_vol = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_vol", "cdecl")
-    mk_vol.argtypes = [POINTER(struct_rt_wdb), String, String, c_size_t, c_size_t, c_size_t, c_size_t, c_size_t, vect_t, matp_t]
-    mk_vol.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 663
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_submodel", "cdecl"):
-    mk_submodel = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_submodel", "cdecl")
-    mk_submodel.argtypes = [POINTER(struct_rt_wdb), String, String, String, c_int]
-    mk_submodel.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 672
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_write_color_table", "cdecl"):
-    mk_write_color_table = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_write_color_table", "cdecl")
-    mk_write_color_table.argtypes = [POINTER(struct_rt_wdb)]
-    mk_write_color_table.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 686
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_addmember", "cdecl"):
-    mk_addmember = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_addmember", "cdecl")
-    mk_addmember.argtypes = [String, POINTER(struct_bu_list), mat_t, c_int]
-    mk_addmember.restype = POINTER(struct_wmember)
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 715
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_comb", "cdecl"):
-    mk_comb = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_comb", "cdecl")
-    mk_comb.argtypes = [POINTER(struct_rt_wdb), String, POINTER(struct_bu_list), c_int, String, String, POINTER(c_ubyte), c_int, c_int, c_int, c_int, c_int, c_int, c_int]
-    mk_comb.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 735
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_comb1", "cdecl"):
-    mk_comb1 = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_comb1", "cdecl")
-    mk_comb1.argtypes = [POINTER(struct_rt_wdb), String, String, c_int]
-    mk_comb1.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 745
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_region1", "cdecl"):
-    mk_region1 = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_region1", "cdecl")
-    mk_region1.argtypes = [POINTER(struct_rt_wdb), String, String, String, String, POINTER(c_ubyte)]
-    mk_region1.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 767
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_conversion", "cdecl"):
-    mk_conversion = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_conversion", "cdecl")
-    mk_conversion.argtypes = [String]
-    mk_conversion.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 774
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_set_conversion", "cdecl"):
-    mk_set_conversion = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_set_conversion", "cdecl")
-    mk_set_conversion.argtypes = [c_double]
-    mk_set_conversion.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 780
-try:
-    mk_conv2mm = (c_double).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"], "mk_conv2mm")
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 786
-try:
-    mk_version = (c_int).in_dll(_libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"], "mk_version")
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 791
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("mk_freemembers", "cdecl"):
-    mk_freemembers = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("mk_freemembers", "cdecl")
-    mk_freemembers.argtypes = [POINTER(struct_bu_list)]
-    mk_freemembers.restype = None
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 827
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("make_hole", "cdecl"):
-    make_hole = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("make_hole", "cdecl")
-    make_hole.argtypes = [POINTER(struct_rt_wdb), point_t, vect_t, fastf_t, c_int, POINTER(POINTER(struct_directory))]
-    make_hole.restype = c_int
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 855
-if _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].has("make_hole_in_prepped_regions", "cdecl"):
-    make_hole_in_prepped_regions = _libs["/usr/brlcad/dev-7.31.0/lib/libwdb.so"].get("make_hole_in_prepped_regions", "cdecl")
-    make_hole_in_prepped_regions.argtypes = [POINTER(struct_rt_wdb), POINTER(struct_rt_i), point_t, vect_t, fastf_t, POINTER(struct_bu_ptbl)]
-    make_hole_in_prepped_regions.restype = c_int
 
 # <built-in>
 try:
@@ -19938,42 +19443,6 @@ try:
 except:
     pass
 
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 87
-try:
-    WMEMBER_NULL = cast(0, POINTER(struct_wmember))
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 691
-def mk_lcomb(_fp, _name, _headp, _rf, _shadername, _shaderargs, _rgb, _inh):
-    return (mk_comb (_fp, _name, pointer((_headp.contents.l)), _rf, _shadername, _shaderargs, _rgb, 0, 0, 0, 0, _inh, 0, 0))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 697
-def mk_lrcomb(fp, name, _headp, region_flag, shadername, shaderargs, rgb, id, air, material, los, inherit_flag):
-    return (mk_comb (fp, name, pointer((_headp.contents.l)), region_flag, shadername, shaderargs, rgb, id, air, material, los, inherit_flag, 0, 0))
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 753
-try:
-    WMOP_INTERSECT = DB_OP_INTERSECT
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 754
-try:
-    WMOP_SUBTRACT = DB_OP_SUBTRACT
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 755
-try:
-    WMOP_UNION = DB_OP_UNION
-except:
-    pass
-
-# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 793
-def mk_export_fwrite(wdbp, name, gp, id):
-    return (wdb_export (wdbp, name, gp, id, mk_conv2mm))
-
 bu_vls = struct_bu_vls# /usr/brlcad/dev-7.31.0/include/brlcad/bu/vls.h: 53
 
 bu_list = struct_bu_list# /usr/brlcad/dev-7.31.0/include/brlcad/bu/list.h: 130
@@ -20397,8 +19866,6 @@ bu_cmdhist = struct_bu_cmdhist# /usr/brlcad/dev-7.31.0/include/brlcad/./bu/cmd.h
 bu_cmdhist_list = struct_bu_cmdhist_list# /usr/brlcad/dev-7.31.0/include/brlcad/./bu/cmd.h: 64
 
 bu_cmdhist_obj = struct_bu_cmdhist_obj# /usr/brlcad/dev-7.31.0/include/brlcad/./bu/cmd.h: 71
-
-wmember = struct_wmember# /usr/brlcad/dev-7.31.0/include/brlcad/wdb.h: 77
 
 tree_list = struct_tree_list# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tree.h: 233
 
