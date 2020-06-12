@@ -6,7 +6,6 @@ from os.path import exists, basename, splitext, join
 from os import environ
 from ctypesgen import parser, processor, printer_python
 from ctypesgen.options import get_default_options
-#from brlcad_version import load_ctypesgen_options
 from configparser import ConfigParser
 
 args_parser = optparse.OptionParser()
@@ -29,14 +28,14 @@ def main():
     config.read_file(open("python-brlcad.cfg"))
     default_options.headers = []
 
-    for i in ["rt", "bn", "bu", "wdb"]:
+    for i in ["rt", "bn", "bu", "wdb", "ged", "brep"]:
         for j in [i for i in config.get("brlcad", f"{i}-lib-headers").split(',')]:
             j = j.strip()
             default_options.headers.append(include_prefix + j)
         if not i == "bu":
             for j in [i for i in config.get("brlcad", f"{i}-dependencies").split(',')]:
                 j = "." + j.strip()
-                default_options.modules.append(j if not "rt" in j else "raytrace")
+                default_options.modules.append(j if not "rt" in j else ".raytrace")
         default_options.libraries.extend([f"/usr/brlcad/dev-7.31.0/lib/lib{i}.so"])
         i = i if not i=="rt" else "raytrace"
         default_options.output = "brlcad/bindings/" + i + ".py"

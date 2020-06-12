@@ -119,9 +119,12 @@ class Database(rt_wdb):
         if not tree:
             raise ValueError("Empty tree for combination: {0}".format(name))
         tree = primitives.wrap_tree(tree)
-        new_comb = cta.brlcad_new(wdb.struct_rt_comb_internal)
-        new_comb.magic = wdb.RT_COMB_MAGIC
+        print(type(tree))
+        new_comb = cta.brlcad_new(rt.struct_rt_comb_internal)
+        new_comb.magic = rt.RT_COMB_MAGIC
         new_comb.tree = tree.build_tree()
+        new_comb.tree.contents.magic = 2434339217
+        new_comb.tree.contents.tr_l.tl_op = rt.OP_DB_LEAF
         new_comb.region_flag = cta.bool_to_char(is_region)
         new_comb.is_fastgen = cta.int_to_char(is_fastgen)
         new_comb.region_id = region_id
@@ -131,10 +134,11 @@ class Database(rt_wdb):
         new_comb.rgb_valid = cta.bool_to_char(rgb_color)
         new_comb.rgb = cta.rgb(rgb_color)
         new_comb.temperature = temperature
-        new_comb.shader = cta.str_to_vls(shader)
-        new_comb.material = cta.str_to_vls(material)
+        print(type(new_comb.shader))
+        new_comb.shader = cta.str_to_vls(shader).contents
+        new_comb.material = cta.str_to_vls(material).contents
         new_comb.inherit = cta.bool_to_char(inherit)
-        wdb.wdb_export(self.db_fp, name, wdb.byref(new_comb), libwdb.ID_COMBINATION, 1)
+        wdb.wdb_export(self.db_fp, name, wdb.cast(wdb.pointer(new_comb), wdb.c_void_p), 31, 1)
 
     def region(self, *args, **kwargs):
         kwargs["is_region"] = True

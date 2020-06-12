@@ -825,10 +825,18 @@ from .bn import *
 from .bu import *
 from .bu import *
 from .bn import *
-from raytrace import *
+from .raytrace import *
 
 # 6 modules
 # End modules
+
+u_char = c_ubyte# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 155
+
+u_int = c_uint# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 156
+
+u_long = c_ulong# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 157
+
+u_short = c_ushort# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 158
 
 __off_t = c_long# /usr/include/x86_64-linux-gnu/bits/types.h: 152
 
@@ -14598,15 +14606,73 @@ try:
 except:
     pass
 
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 146
+def FMAX(a, b):
+    return (a > b) and a or b
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 150
+def FMIN(a, b):
+    return (a < b) and a or b
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 159
+try:
+    HAVE_U_TYPES = 1
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 165
+try:
+    _FILE_OFFSET_BITS = 64
+except:
+    pass
+
 # /usr/include/linux/limits.h: 13
 try:
     PATH_MAX = 4096
 except:
     pass
 
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 196
+try:
+    __STDC_LIMIT_MACROS = 1
+except:
+    pass
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 199
+try:
+    __STDC_CONSTANT_MACROS = 1
+except:
+    pass
+
+b_off_t = off_t# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 222
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 245
+def GCC_PREREQ(major, minor):
+    return 0
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 269
+def ICC_PREREQ(version):
+    return 0
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 320
+def UNUSED(parameter):
+    return parameter
+
 # /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 341
 def LIKELY(expression):
     return expression
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 362
+def UNLIKELY(expression):
+    return expression
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 469
+def CPP_STR(x):
+    return x
+
+# /usr/brlcad/dev-7.31.0/include/brlcad/common.h: 479
+def CPP_XSTR(x):
+    return (CPP_STR (x))
 
 # /usr/brlcad/dev-7.31.0/include/brlcad/bu/defines.h: 50
 try:
@@ -20405,4 +20471,3 @@ tree_list = struct_tree_list# /usr/brlcad/dev-7.31.0/include/brlcad/rt/tree.h: 2
 # No inserted files
 
 # No prefix-stripping
-

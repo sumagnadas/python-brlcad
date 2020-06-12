@@ -1,3 +1,4 @@
+from sys import settrace
 from brlcad.vmath import Transform
 from brlcad.database import Database
 from brlcad import primitives

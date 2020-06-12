@@ -6,6 +6,7 @@ from brlcad.vmath import Plane
 import numpy as np
 import brlcad.bindings.bn as bn
 import brlcad.bindings.bu as bu
+import brlcad.bindings.raytrace as rt
 import ctypes
 
 
@@ -231,11 +232,11 @@ def bool(value):
 
 
 def bool_to_char(value):
-    return '\1' if value else '\0'
+    return b'\1' if value else b'\0'
 
 
 def int_to_char(value):
-    return str(chr(value))
+    return bytes(chr(value), encoding='utf8')
 
 
 def rgb(values):
@@ -256,10 +257,10 @@ def str_to_vls(value):
     """
     Creates a VLS string with memory allocated by BRL-CAD code, must be also freed by BRL-CAD code.
     """
-    result = bn.bu_vls_vlsinit()
+    result = bu.bu_vls_vlsinit()
     if value is not None:
-        bn.bu_vls_strcat(result, bn.String(value))
-    return result.contents
+        bu.bu_vls_strcat(result, bu.String(ctypes.cast(value, ctypes.POINTER(ctypes.c_char))))
+    return rt.ctypes.cast(result, rt.ctypes.POINTER(rt.struct_bu_vls))
 
 
 def ctypes_array(pointer_list):
