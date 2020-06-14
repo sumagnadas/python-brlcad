@@ -119,22 +119,21 @@ class Database(rt_wdb):
         if not tree:
             raise ValueError("Empty tree for combination: {0}".format(name))
         tree = primitives.wrap_tree(tree)
-        print(type(tree))
         new_comb = cta.brlcad_new(rt.struct_rt_comb_internal)
         new_comb.magic = rt.RT_COMB_MAGIC
         new_comb.tree = tree.build_tree()
         new_comb.tree.contents.magic = 2434339217
         new_comb.tree.contents.tr_l.tl_op = rt.OP_DB_LEAF
-        new_comb.region_flag = cta.bool_to_char(is_region)
-        new_comb.is_fastgen = cta.int_to_char(is_fastgen)
+        new_comb.tree.contents.tr_l.tl_mat = None
+        new_comb.region_flag = 0 if not is_region else 1
+        new_comb.is_fastgen = is_fastgen
         new_comb.region_id = region_id
         new_comb.aircode = air_code
         new_comb.GIFTmater = gift_material
         new_comb.los = line_of_sight
-        new_comb.rgb_valid = cta.bool_to_char(rgb_color)
+        new_comb.rgb_valid = 0 if not rgb_color else 1
         new_comb.rgb = cta.rgb(rgb_color)
         new_comb.temperature = temperature
-        print(type(new_comb.shader))
         new_comb.shader = cta.str_to_vls(shader).contents
         new_comb.material = cta.str_to_vls(material).contents
         new_comb.inherit = cta.bool_to_char(inherit)

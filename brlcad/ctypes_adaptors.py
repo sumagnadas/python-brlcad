@@ -29,7 +29,7 @@ def brlcad_copy(obj, debug_msg):
     This is needed when BRLCAD frees the memory pointed to by the passed in pointer - yes that happens !
     """
     count = ctypes.sizeof(obj)
-    obj_copy = bn.bu_malloc(count, debug_msg)
+    obj_copy = bu.bu_malloc(count, debug_msg)
     ctypes.memmove(obj_copy, ctypes.addressof(obj), count)
     return type(obj).from_address(bu.cast(obj_copy, ctypes.POINTER(ctypes.c_int))[0])
 

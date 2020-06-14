@@ -4,6 +4,7 @@ Python wrapper for BRL-CAD combinations.
 import collections
 import numpy as np
 import brlcad.bindings.raytrace as rt
+import brlcad.bindings.bu as bu
 import brlcad.ctypes_adaptors as cta
 from brlcad.exceptions import BRLCADException
 from brlcad.primitives.base import Primitive
@@ -134,9 +135,11 @@ class LeafNode(TreeNode):
         node = cta.brlcad_new(rt.struct_tree_db_leaf)
         node.magic = rt.RT_TREE_MAGIC
         node.tl_op = rt.OP_DB_LEAF
-        node.tl_mat = None if self.matrix is None else cta.transform(self.matrix, use_brlcad_malloc=True)
+        node.tl_mat = None if self.matrix == None else cta.transform(self.matrix, use_brlcad_malloc=True)
         node.tl_name = rt.bu_strdupm(self.name, "tree_db_leaf.tl_name")
-        return rt.cast(rt.pointer(node), rt.POINTER(rt.union_tree))
+        union = rt.union_tree()
+        union.tr_l = node
+        return rt.cast(rt.pointer(union), rt.POINTER(rt.union_tree))
 
 
 class NotNode(TreeNode):
