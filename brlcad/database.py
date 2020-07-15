@@ -137,8 +137,11 @@ class Database(rt_wdb):
         new_comb.shader = cta.str_to_vls(shader).contents
         new_comb.material = cta.str_to_vls(material).contents
         new_comb.inherit = cta.bool_to_char(inherit)
-        wdb.wdb_export(self.db_fp, name, wdb.cast(wdb.pointer(new_comb), wdb.c_void_p), 31, 1)
+        wdb.wdb_export(self.db_fp, name, wdb.byref(new_comb), rt.ID_COMBINATION, 1)
 
     def region(self, *args, **kwargs):
         kwargs["is_region"] = True
         return self.combination(*args, **kwargs)
+
+    def close(self):
+        wdb.wdb_close(self.db_fp)

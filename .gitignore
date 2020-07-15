@@ -12,4 +12,5 @@ random*
 brlcad_*
 brlcad/bindings.bak
 *.pyc
+*-bomb.log
 

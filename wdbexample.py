@@ -13,7 +13,7 @@ database.sphere("default_sph")
 database.sphere("sph_with_args", (10, 10, 10), 2)
 
 database.region(
-            'sph_with_args_region',
+            'region',
             region_id = 16,
             tree = 'sph_with_args',
             shader="plastic {di .9 sp .4}",
