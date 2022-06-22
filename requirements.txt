@@ -1,4 +1,4 @@
 cffi==1.14.0
 ctypesgen==1.0.2
-numpy==1.18.4
+numpy==1.22.0
 pycparser==2.20
